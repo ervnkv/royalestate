@@ -1,0 +1,27 @@
+.TextBlock{
+  display: flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-direction: column;
+  // border-bottom: 5px solid #e92222;
+  &Main{
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    &Content{
+      margin: 0 30px;
+      flex-direction: colomn;
+      text-align: left;
+      h2{
+        font-weight: 600;
+        font-size: 30px;
+      }
+      h3{
+        font-weight: 400;
+        font-size: 20px;
+      }
+    }
+  }
+}
+

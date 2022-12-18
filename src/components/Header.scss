@@ -1,0 +1,53 @@
+.header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #e2e2e2;
+  
+  &_logo {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    img{
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      padding: 0;
+      margin: auto;
+    }
+    &_text {
+      flex-direction: column;
+      margin: auto;
+      h3{
+        font-weight: 800;
+        font-size: 30px;  
+        // color: #222;
+        margin: 0;
+      }
+      p{
+        font-weight: 300;
+        font-size: 16px;  
+        // color: #222;
+        margin: 0;
+      }
+    }
+
+  }
+  &_menu {
+    margin: auto;
+    li{
+      display:inline-block;
+      text-align: center;
+      padding: 5px 15px;
+      cursor: pointer;
+    }  
+  }
+
+  &_socialMedia {
+    margin: auto;
+    padding: 5px 15px;
+    font-size: 25px;
+      
+  }
+}
