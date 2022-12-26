@@ -6,7 +6,7 @@ function Header() {
 		<header className='header'>
 			<div className='wrapper f-row'>
 				<div className='header_logo f-row'>
-					<img width={80} height={80} src="/img/logo.png" alt="Logo" />
+					<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
 					<div className='header_logo_text'>
 						<h2>КЕДР</h2>
 						<p>оценка квартир</p>

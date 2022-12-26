@@ -1,0 +1,53 @@
+@import '../index.scss';
+
+.textblockbtn {
+    margin: 30px 0;
+    align-items:center;
+    
+    .container{
+        align-items:flex-start;
+        .card{
+            width: 320px;
+            margin: 30px;
+            padding: 15px;
+            align-items:center;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 21px;
+            img{
+                height: 95px;
+                cursor:auto;
+            }
+            .headText{
+                min-height: 100px;
+                justify-content: center
+
+            }
+            p{
+                min-height: 200px;
+            }
+            .price{
+                min-height: 80px;
+                justify-content: center;
+                h2,h3{
+                    margin: 2.5px;
+                }
+            }
+            button{
+                width: 170px;
+                height: 40px;
+                background: #24A5DD;
+                border-radius: 14px;
+                border: none;
+                cursor: pointer;
+                h4{
+                    color: #ffff;
+                    font-weight: 800;
+                }
+            } 
+
+            
+        }
+    }
+}
+
+
