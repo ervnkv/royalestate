@@ -25,7 +25,7 @@
         //     "error",
         //     "windows"
         // ],
-
+        "react/prop-types": ["off"],
         "quotes": [
             "error",
             "single"
