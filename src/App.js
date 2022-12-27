@@ -96,7 +96,7 @@ const TextBlockContent3= [
 // Наполнение сайта - Блок СВЯЗАТЬСЯ С НАМИ
 const Socials= [
 	{
-		link: 'https://instagram.com/tarasov_a_a__?igshid=YmMyMTA2M2Y=',
+		link: 'https://www.instagram.com/direct/t/340282366841710300949128189009682422351',
 		img: '../../img/social/instagram.svg',
 		imgAlt: 'instagram',
 		id: 31,
