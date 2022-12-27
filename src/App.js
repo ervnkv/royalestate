@@ -51,7 +51,7 @@ const TextBlockContent1= [
 		id: 3,
 	},
 ];
-// Наполнение сайта - Блок 2 
+// Наполнение сайта - Блок ПАКЕТЫ УСЛУГ
 const TextBlockContent2= [
 	{
 		head: 'Оценка квартиры', 
@@ -69,7 +69,7 @@ const TextBlockContent2= [
 	},
 ];
 
-// Наполнение сайта - Блок 3 
+// Наполнение сайта - Блок ПРОЦЕСС СОТРУДНИЧЕСТВА 
 const TextBlockContent3= [
 	{
 		head: 'Подписание договора', 
@@ -93,10 +93,10 @@ const TextBlockContent3= [
 	},
 ];
 
-// Наполнение сайта - Блок 1 
+// Наполнение сайта - Блок СВЯЗАТЬСЯ С НАМИ
 const Socials= [
 	{
-		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		link: 'https://instagram.com/tarasov_a_a__?igshid=YmMyMTA2M2Y=',
 		img: '../../img/social/instagram.svg',
 		imgAlt: 'instagram',
 		id: 31,
@@ -108,7 +108,7 @@ const Socials= [
 		id: 32,
 	},
 	{
-		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		link: 'https://t.me/Tarasov444',
 		img: '../../img/social/telegram.svg',
 		imgAlt: 'telegram',
 		id: 33,
