@@ -1,9 +1,14 @@
 import React from 'react';
+
 import Header from './components/Header.js';
-import Footer from './components/Footer.js';
 import TextBlockHor from './components/TextBlockHor.js';
+// import Calculator from './components/Calculator.js';
 import TextBlockHorBtn from './components/TextBlockHorBtn.js';
 import TextBlockVert from './components/TextBlockVert.js';
+import Contacts from './components/Contacts.js';
+import Footer from './components/Footer.js';
+
+
 
 // Верстка сайта
 export default function App(){
@@ -13,7 +18,9 @@ export default function App(){
 			<div id='main' className='wrapper'>
 				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ'/>
 				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ'/>
+				{/* <Calculator Title='СКОЛЬКО Я ПОЛУЧУ'/> */}
 				<TextBlockVert TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА'/>
+				<Contacts Socials={Socials} Title='СВЯЗАТЬСЯ С НАМИ'/>
 			</div>
 			<Footer/>						
 		</>
@@ -83,6 +90,34 @@ const TextBlockContent3= [
 		head: 'Сопровождение в суде',
 		content: 'Подготовка и подача искового заявления о взыскании компенсации за строительные недостатки, пени, штрафа, компенсации морального вреда, и убытков.',
 		id: 24,
+	},
+];
+
+// Наполнение сайта - Блок 1 
+const Socials= [
+	{
+		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		img: '../../img/social/instagram.svg',
+		imgAlt: 'instagram',
+		id: 31,
+	},
+	{
+		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		img: '../../img/social/vk.svg',
+		imgAlt: 'vk',
+		id: 32,
+	},
+	{
+		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		img: '../../img/social/telegram.svg',
+		imgAlt: 'telegram',
+		id: 33,
+	},
+	{
+		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		img: '../../img/social/email.svg',
+		imgAlt: 'email',
+		id: 34,
 	},
 ];
 

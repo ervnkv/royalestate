@@ -16,11 +16,16 @@ h1, h2{
     font-size: 24px;
     font-weight: 800;
     color: $textMain;
+    text-align: center;
 }
 h3{
     font-size: 20px; 
     font-weight: 800;
     color: $textMain;
+}
+
+p{
+    line-height: 25px;
 }
 
 .wrapper{
@@ -62,4 +67,17 @@ h3{
 }
 .m-10 {
     margin: 10px;
+}
+
+button{
+    width: 170px;
+    height: 40px;
+    background: #24A5DD;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    h4{
+        color: #ffff;
+        font-weight: 800;
+    }
 }

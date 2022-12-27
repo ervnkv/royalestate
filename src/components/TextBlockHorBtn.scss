@@ -7,7 +7,7 @@
     .container{
         align-items:flex-start;
         .card{
-            width: 320px;
+            width: 350px;
             margin: 30px;
             padding: 15px;
             align-items:center;
@@ -31,21 +31,7 @@
                 h2,h3{
                     margin: 2.5px;
                 }
-            }
-            button{
-                width: 170px;
-                height: 40px;
-                background: #24A5DD;
-                border-radius: 14px;
-                border: none;
-                cursor: pointer;
-                h4{
-                    color: #ffff;
-                    font-weight: 800;
-                }
-            } 
-
-            
+            }            
         }
     }
 }

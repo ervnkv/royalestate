@@ -4,7 +4,7 @@ import './Footer.scss';
 export default function Footer() {
 	return(
 		<div className='footer'>
-			<div className='wrapper f-column'>
+			<div className='wrapper'>
 				<div className='f-row'>
 					<div>
 						<p>ООО «Юридическая компания «ЮАС»</p>

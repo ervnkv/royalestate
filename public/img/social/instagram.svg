@@ -1,1 +1,36 @@
-<?xml version="1.0" ?><svg style="enable-background:new 0 0 48 48;" version="1.1" viewBox="0 0 48 48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Icons"><g id="Icons_8_"><g><linearGradient gradientTransform="matrix(1 0 0 -1 0 50)" gradientUnits="userSpaceOnUse" id="SVGID_1_" x1="24" x2="24" y1="8.71714" y2="43.88022"><stop offset="0.09694" style="stop-color:#FFD879"/><stop offset="0.15387" style="stop-color:#FCCB76"/><stop offset="0.25828" style="stop-color:#F5AA6C"/><stop offset="0.39756" style="stop-color:#E9755E"/><stop offset="0.44898" style="stop-color:#E45F58"/><stop offset="0.67857" style="stop-color:#D22A9C"/><stop offset="1" style="stop-color:#6968DF"/></linearGradient><circle cx="24.00002" cy="24" r="15.34377" style="fill:url(#SVGID_1_);"/><g><path d="M23.99985,27.7154c-2.0488,0-3.7153-1.667-3.7153-3.7158s1.6665-3.7148,3.7153-3.7148      c2.0489,0,3.7159,1.666,3.7159,3.7148S26.04875,27.7154,23.99985,27.7154z M23.99985,21.2848      c-1.497,0-2.7153,1.2177-2.7153,2.7148c0,1.4971,1.2183,2.7158,2.7153,2.7158c1.4976,0,2.7159-1.2187,2.7159-2.7158      C26.71575,22.5025,25.49745,21.2848,23.99985,21.2848z" style="fill:#FFFFFF;"/></g><circle cx="28.24785" cy="19.8909" r="0.4621" style="fill:#FFFFFF;"/><g><path d="M27.19765,31.2643h-6.3955c-2.2427,0-4.0669-1.8243-4.0669-4.0665v-6.3955      c0-2.2431,1.8242-4.0673,4.0669-4.0673h6.3955c2.2427,0,4.0669,1.8242,4.0669,4.0673v6.3955      C31.26455,29.44,29.44035,31.2643,27.19765,31.2643z M20.80215,17.735c-1.6909,0-3.0669,1.3759-3.0669,3.0673v6.3955      c0,1.6905,1.376,3.0665,3.0669,3.0665h6.3955c1.6909,0,3.0669-1.376,3.0669-3.0665v-6.3955c0-1.6914-1.376-3.0673-3.0669-3.0673      H20.80215z" style="fill:#FFFFFF;"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+</style>
+<g id="Icons">
+	<g id="Icons_8_">
+		<g>
+			
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="24" y1="1191.5842" x2="24" y2="1136.5837" gradientTransform="matrix(1 0 0 1 0 -1140.5511)">
+				<stop  offset="9.694000e-02" style="stop-color:#FFD879"/>
+				<stop  offset="0.1539" style="stop-color:#FCCB76"/>
+				<stop  offset="0.2583" style="stop-color:#F5AA6C"/>
+				<stop  offset="0.3976" style="stop-color:#E9755E"/>
+				<stop  offset="0.449" style="stop-color:#E45F58"/>
+				<stop  offset="0.6786" style="stop-color:#D22A9C"/>
+				<stop  offset="1" style="stop-color:#6968DF"/>
+			</linearGradient>
+			<circle class="st0" cx="24" cy="24" r="24"/>
+			<g>
+				<path class="st1" d="M24.6,32.6c-4.3,0-7.8-3.5-7.8-7.8s3.5-7.8,7.8-7.8c4.3,0,7.8,3.5,7.8,7.8S28.8,32.6,24.6,32.6z M24.6,19.1
+					c-3.1,0-5.7,2.5-5.7,5.7s2.5,5.7,5.7,5.7c3.1,0,5.7-2.5,5.7-5.7S27.7,19.1,24.6,19.1z"/>
+			</g>
+			<circle class="st1" cx="33.4" cy="16.2" r="1"/>
+			<g>
+				<path class="st1" d="M31.2,40H17.9c-4.7,0-8.5-3.8-8.5-8.5V18.1c0-4.7,3.8-8.5,8.5-8.5h13.4c4.7,0,8.5,3.8,8.5,8.5v13.4
+					C39.7,36.2,35.9,40,31.2,40z M17.9,11.7c-3.5,0-6.4,2.9-6.4,6.4v13.4c0,3.5,2.9,6.4,6.4,6.4h13.4c3.5,0,6.4-2.9,6.4-6.4V18.1
+					c0-3.5-2.9-6.4-6.4-6.4H17.9z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
