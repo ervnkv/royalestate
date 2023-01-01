@@ -1,7 +1,14 @@
 import React from 'react';
 import './Header.scss';
 
-function Header() {
+export default function Header({TextBlocks}) {
+	let htmlTextBlock = TextBlocks.map(({head,id}) =>{
+		return(
+			<li key={id}>{head}</li>
+		);
+	});
+	
+	
 	return(
 		<header className='header'>
 			<div className='wrapper f-row'>
@@ -14,12 +21,7 @@ function Header() {
 				</div>
 
 				<ul>
-					<li>Акции</li>
-					<li>Услуги</li>
-					<li>Оценка для банка</li>
-					<li>Оборудование</li>
-					<li>О нас</li>
-					<li>Контакты</li>
+					{htmlTextBlock}
 				</ul>
 
 				<h2>+7 (812) 425-33-42</h2>
@@ -27,4 +29,3 @@ function Header() {
 		</header>
 	);
 }
-export default Header;

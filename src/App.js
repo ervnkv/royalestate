@@ -14,7 +14,7 @@ import Footer from './components/Footer.js';
 export default function App(){
 	return (
 		<>
-			<Header/>
+			<Header TextBlocks={TextBlockContent0}/>
 			<div id='main' className='wrapper'>
 				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ'/>
 				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ'/>
@@ -26,7 +26,33 @@ export default function App(){
 		</>
 	);
 }
-
+// Наполнение сайта - Блок МЕНЮ
+const TextBlockContent0 = [
+	{
+		head: 'Зачем', 
+		id: 41,
+	},
+	{
+		head: 'Выгода',
+		id: 42,
+	},
+	{
+		head: 'Затраты',
+		id: 43,
+	},
+	{
+		head: 'Процесс',
+		id: 44,
+	},
+	{
+		head: 'Вопросы',
+		id: 45,
+	},
+	{
+		head: 'Связаться',
+		id: 46,
+	},
+];
 // Наполнение сайта - Блок 1 
 const TextBlockContent1= [
 	{
