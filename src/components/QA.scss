@@ -1,0 +1,47 @@
+@import '../index.scss';
+
+.qa {
+    margin: 30px 0;   
+    .container{
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        padding: 0 180px;
+        .card{ 
+            .cardHead, .cardContent{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 50px;
+                margin-top: 40px;
+                padding: 0 20px;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 8px;
+            }
+            .cardHead{
+                &:hover{
+                    background-color: rgb(222, 228, 236);
+                    border-color: rgb(167, 179, 248);
+                    cursor: pointer;
+                }
+                &.active{
+                    background-color: rgb(172, 196, 224);
+                    border-color: rgb(82, 102, 216);
+                }
+            }
+            .cardContent{
+                display: flex;
+                align-items:flex-start;
+                margin: 5px 0 0 0;
+                padding: 10px;
+                min-height: 100px;
+                height: auto;
+                background: #ffffff;
+                
+            }
+        }
+    }
+}
+
+
