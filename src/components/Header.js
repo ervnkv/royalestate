@@ -8,7 +8,6 @@ export default function Header({TextBlocks}) {
 		);
 	});
 	
-	
 	return(
 		<header className='header'>
 			<div className='wrapper f-row'>

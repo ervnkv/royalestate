@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './components/Header.js';
 import TextBlockHor from './components/TextBlockHor.js';
-// import Calculator from './components/Calculator.js';
+import Calculator from './components/Calculator.js';
 import TextBlockHorBtn from './components/TextBlockHorBtn.js';
 import TextBlockVert from './components/TextBlockVert.js';
 import Contacts from './components/Contacts.js';
@@ -18,7 +18,7 @@ export default function App(){
 			<div id='main' className='wrapper'>
 				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ'/>
 				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ'/>
-				{/* <Calculator Title='СКОЛЬКО Я ПОЛУЧУ'/> */}
+				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ'/>
 				<TextBlockVert TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА'/>
 				<Contacts Socials={Socials} Title='СВЯЗАТЬСЯ С НАМИ'/>
 			</div>
