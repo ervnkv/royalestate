@@ -8,7 +8,6 @@ export default class Calculator extends Component {
 		this.state = {
 			activeArea: 'a2',
 			activeCount: 'c3',
-			sum: '___',
 		};
 		this.setActiveArea = (id) => {
 			this.setState(() => ({
@@ -19,9 +18,7 @@ export default class Calculator extends Component {
 			this.setState(() => ({
 				activeCount: id
 			}));
-		};
-		
-		
+		};	
 	}
 	
 	render() {

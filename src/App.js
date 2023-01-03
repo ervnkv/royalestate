@@ -130,7 +130,7 @@ const TextBlockContent4= [
 	},
 	{
 		head: 'И все же, почему?', 
-		content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sunt odit dolorum magni itaque deserunt blanditiis suscipit quas nam, perferendis, saepe quos corrupti, praesentium deleniti? Exercitationem delectus atque similique fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sunt odit dolorum magni itaque deserunt blanditiis suscipit quas nam, perferendis, saepe quos corrupti, praesentium deleniti? Exercitationem delectus atque similique fugit! ',
+		content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sunt odit dolorum magni itaque deserunt blanditiis suscipit quas nam, perferendis, saepe quos corrupti, praesentium deleniti? Exercitationem delectus atque similique fugit!',
 		id: 52,
 	},
 	{
@@ -149,7 +149,7 @@ const Socials= [
 		id: 31,
 	},
 	{
-		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		link: 'https://vk.com/id76299038',
 		img: '../../img/social/vk.svg',
 		imgAlt: 'vk',
 		id: 32,

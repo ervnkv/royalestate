@@ -13,7 +13,7 @@
                 justify-content: space-between;
                 align-items: center;
                 height: 50px;
-                margin-top: 40px;
+                margin-top: 10px;
                 padding: 0 20px;
                 background: #FFFFFF;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -21,24 +21,28 @@
             }
             .cardHead{
                 &:hover{
-                    background-color: rgb(222, 228, 236);
-                    border-color: rgb(167, 179, 248);
+                    background-color: #7fc5e4;
+                    border-color: #59add1;
+                    
                     cursor: pointer;
                 }
                 &.active{
-                    background-color: rgb(172, 196, 224);
-                    border-color: rgb(82, 102, 216);
+                    background-color: #24A5DD;
+                    border-color: #1497cf;
+                    border-radius: 8px 8px 0 0;
                 }
             }
             .cardContent{
-                display: flex;
+                display: none;
                 align-items:flex-start;
-                margin: 5px 0 0 0;
+                margin: 1px 0 0 0;
                 padding: 10px;
-                min-height: 100px;
                 height: auto;
                 background: #ffffff;
-                
+                &.active{
+                    display: flex;
+                    border-radius: 0 0 8px 8px;
+                }
             }
         }
     }
