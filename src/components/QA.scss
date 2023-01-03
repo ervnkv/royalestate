@@ -21,14 +21,14 @@
             }
             .cardHead{
                 &:hover{
-                    background-color: #7fc5e4;
-                    border-color: #59add1;
+                    background-color: #f5f5f5;
+                    // border-color: #cfcfcf;
                     
                     cursor: pointer;
                 }
                 &.active{
-                    background-color: #24A5DD;
-                    border-color: #1497cf;
+                    background-color: #f0f0f0;
+                    // border-color: #b3d7e7;
                     border-radius: 8px 8px 0 0;
                 }
             }

@@ -2,7 +2,7 @@ import React from 'react';
 import './TextBlockVert.scss';
 
 
-export default function TextBlockVert({TextBlocks,Title}) {
+export default function TextBlockVert({TextBlocks,Title,ID}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,id}) =>{
 		return(
 			<div key={id} className='f-row card'>
@@ -15,7 +15,7 @@ export default function TextBlockVert({TextBlocks,Title}) {
 	});
 	
 	return(
-		<section className='f-column textblockvert '>
+		<section id={ID} className='f-column textblockvert '>
 			<h2>{Title}</h2>
 			<div className='f-column container '>
 				{htmlTextBlock}	

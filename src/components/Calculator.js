@@ -22,7 +22,7 @@ export default class Calculator extends Component {
 	}
 	
 	render() {
-		const {Title} = this.props;
+		const {Title,ID} = this.props;
 
 		const htmlAreaButtons = areaButtons.map(({tittle,id}) =>{
 			const classN = (this.state.activeArea == id ? 'btnRoomArea active' : 'btnRoomArea');
@@ -108,7 +108,7 @@ export default class Calculator extends Component {
 		
 
 		return(
-			<section className='f-column calculator'>
+			<section id={ID} className='f-column calculator'>
 				<h2>{Title}</h2>
 				<div className='f-row container'>
 					<img src='../../img/icons/floorplan.png' alt='floorplan'></img>

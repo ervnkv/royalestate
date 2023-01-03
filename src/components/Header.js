@@ -2,16 +2,16 @@ import React from 'react';
 import './Header.scss';
 
 export default function Header({TextBlocks}) {
-	let htmlTextBlock = TextBlocks.map(({head,id}) =>{
+	let htmlTextBlock = TextBlocks.map(({head,link,id}) =>{
 		return(
-			<li key={id}>{head}</li>
+			<a key={id} href={link}>{head}</a>
 		);
 	});
 	
 	return(
 		<header className='header'>
-			<div className='wrapper f-row'>
-				<div className='header_logo f-row'>
+			<div className='f-row wrapper'>
+				<div className='f-row header_logo'>
 					<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
 					<div className='header_logo_text'>
 						<h2>КЕДР</h2>

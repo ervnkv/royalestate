@@ -17,12 +17,12 @@ export default function App(){
 		<>
 			<Header TextBlocks={TextBlockContent0}/>
 			<div id='main' className='wrapper'>
-				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ'/>
-				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ'/>
-				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ'/>
-				<TextBlockVert TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА'/>
-				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ'/>
-				<Contacts Socials={Socials} Title='СВЯЗАТЬСЯ С НАМИ'/>
+				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
+				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2'/>
+				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
+				<TextBlockVert TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
+				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
+				<Contacts Socials={Socials} Title='СВЯЗАТЬСЯ С НАМИ' ID='section-6'/>
 			</div>
 			<Footer/>						
 		</>
@@ -31,27 +31,33 @@ export default function App(){
 // Наполнение сайта - Блок МЕНЮ
 const TextBlockContent0 = [
 	{
-		head: 'Зачем', 
+		head: 'Зачем',
+		link: '#section-1', 
 		id: 41,
 	},
 	{
-		head: 'Выгода',
+		head: 'Затраты',
+		link: '#section-2', 
 		id: 42,
 	},
 	{
-		head: 'Затраты',
+		head: 'Выгода',
+		link: '#section-3', 
 		id: 43,
 	},
 	{
 		head: 'Процесс',
+		link: '#section-4', 
 		id: 44,
 	},
 	{
 		head: 'Вопросы',
+		link: '#section-5', 
 		id: 45,
 	},
 	{
 		head: 'Связаться',
+		link: '#section-6', 
 		id: 46,
 	},
 ];

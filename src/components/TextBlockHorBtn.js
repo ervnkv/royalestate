@@ -2,7 +2,7 @@ import React from 'react';
 import './TextBlockHorBtn.scss';
 
 
-export default function TextBlockHorBtn({TextBlocks,Title}) {
+export default function TextBlockHorBtn({TextBlocks,Title,ID}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,priceMain,priceSecond,id}) =>{
 		return(
 			<div key={id} className='card f-column t-center'>
@@ -22,7 +22,7 @@ export default function TextBlockHorBtn({TextBlocks,Title}) {
 	});
 	
 	return(
-		<section className='f-column textblockbtn '>
+		<section id={ID} className='f-column textblockbtn '>
 			<h2>{Title}</h2>
 			<div className='f-row container '>
 				{htmlTextBlock}	

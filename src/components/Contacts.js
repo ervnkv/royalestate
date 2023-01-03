@@ -2,7 +2,7 @@ import React from 'react';
 import './Contacts.scss';
 
 
-export default function Contacts({Socials,Title}) {
+export default function Contacts({Socials,Title,ID}) {
 	const htmlTextBlock = Socials.map(({link,img,imgAlt,id}) =>{
 		return(
 			<div key={id} className='social'>
@@ -14,7 +14,7 @@ export default function Contacts({Socials,Title}) {
 	});
 	
 	return(
-		<section className='f-column contacts'>
+		<section id={ID} className='f-column contacts'>
 			<h2>{Title}</h2>
 			<div className='f-row container'>
 				<button>

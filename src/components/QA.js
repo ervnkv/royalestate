@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './QA.scss';
 
 
-export default function QA({TextBlocks,Title}) {
+export default function QA({TextBlocks,Title,ID}) {
 	
 	const htmlTextBlock = TextBlocks.map(({head,content,id}) => {
 		const [isActive, setActive] = useState(false);
@@ -22,7 +22,7 @@ export default function QA({TextBlocks,Title}) {
 	});
 
 	return(
-		<section className='f-column qa'>
+		<section id={ID} className='f-column qa'>
 			<h2>{Title}</h2>
 			<div className='f-column container'>
 				{htmlTextBlock}
