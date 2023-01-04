@@ -28,36 +28,39 @@ export default function App(){
 		</>
 	);
 }
+
+
+
 // Наполнение сайта - Блок МЕНЮ
 const TextBlockContent0 = [
 	{
 		head: 'Зачем',
-		link: '#section-1', 
+		link: 'section-1', 
 		id: 41,
 	},
 	{
 		head: 'Затраты',
-		link: '#section-2', 
+		link: 'section-2', 
 		id: 42,
 	},
 	{
 		head: 'Выгода',
-		link: '#section-3', 
+		link: 'section-3', 
 		id: 43,
 	},
 	{
 		head: 'Процесс',
-		link: '#section-4', 
+		link: 'section-4', 
 		id: 44,
 	},
 	{
 		head: 'Вопросы',
-		link: '#section-5', 
+		link: 'section-5', 
 		id: 45,
 	},
 	{
 		head: 'Связаться',
-		link: '#section-6', 
+		link: 'section-6', 
 		id: 46,
 	},
 ];

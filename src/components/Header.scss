@@ -15,15 +15,29 @@ header{
         }
         ul{
             list-style-type:none;
-            a {
+            .menu {
                 margin: 0 7.5px;
                 display: inline-block;
+                font-size: 18px;
                 font-weight: 800;
+                text-decoration: none;
                 cursor: pointer;
                 &:hover{
                     font-weight: 800;
                     color: $textMain;
                 } 
+            }
+            .progress_bg{
+                height: 10px;
+                background-color: rgb(245, 245, 245);
+                border-radius: 5px;
+                margin: 0 10px 0 10px;
+                .progress_solid{
+                    height: 100%;
+                    width: 20%;
+                    border-radius: 5px;
+                    background-color: rgb(86, 144, 253);
+                }
             }
         }
     }
