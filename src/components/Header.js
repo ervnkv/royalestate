@@ -1,7 +1,9 @@
 import React from 'react';
 import './Header.scss';
 import scriptScrollTo from './scriptScrollTo.js';
-import scriptScroll from './scriptScroll.js';
+// import scriptScroll from './scriptScroll.js';
+import scriptProgressMargin from './scriptProgressMargin.js';
+
 
 export default function Header({TextBlocks}) {
 	let htmlTextBlock = TextBlocks.map(({head,link,id}) =>{
@@ -10,19 +12,14 @@ export default function Header({TextBlocks}) {
 			className='menu'
 			key={id}
 			onClick = {() => {
-				scriptScrollTo('section',80,link);
-				
+				scriptScrollTo('section',80,link);	
 			}}
 			>{head}</li>
 		);
 	});
-	
-	
-	const {menuMarginLeft, menuMarginRight} = scriptScroll('section', '.menu', 80);
-	const elementProgress = document.querySelector('.progress_bg');
-	elementProgress.style['margin-left'] = menuMarginLeft+'px';
-	elementProgress.style['margin-right'] = menuMarginRight+'px';
 
+	const {menuMarginLeft, menuMarginRight} = scriptProgressMargin('.menu');
+	
 	return(
 		<header className='header'>
 			<div className='f-row wrapper'>
@@ -39,7 +36,7 @@ export default function Header({TextBlocks}) {
 						{htmlTextBlock}
 					</div>
 					
-					<div className='progress_bg'>
+					<div className='progress_bg' style={{marginLeft: menuMarginLeft, marginRight: menuMarginRight}}>
 						<div className='progress_solid'>
 						</div>
 					</div>
@@ -49,7 +46,9 @@ export default function Header({TextBlocks}) {
 			</div>	
 		</header>
 	);
+	
 }
+
 
 
 

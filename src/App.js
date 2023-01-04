@@ -11,6 +11,8 @@ import Footer from './components/Footer.js';
 
 
 
+
+
 // Верстка сайта
 export default function App(){
 	return (
