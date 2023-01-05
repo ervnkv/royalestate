@@ -1,56 +1,42 @@
-// elementsPageName = 'section', 
-// elementsMenuName = '.menu', 
-// headerOffset = 80,
-// elementProgressBgName = '.progress_bg'
-export default function(headerOffset = 80, elementProgressBgName = '.progress_bg', elementsMenuName = '.menu') {
-
+export default function(headerOffset = 80, elementsPageName = 'section', elementsMenuCoord, elementProgressName = '.progress_solid') {
     document.addEventListener('scroll',() => {
         // Текущий верх страницы
         const currentTop = Math.ceil(document.documentElement.scrollTop+headerOffset);
-        // Элементы меню
-        const elementsMenu = document.querySelectorAll(elementsMenuName);
-        // Ширина элементов меню
-        const elementsMenuWidth = [];
-        elementsMenu.forEach(element => {
-            elementsMenuWidth.push(+window.getComputedStyle(element).width.replace('px',''));
+        
+        // Секции
+        const elementsPage = document.querySelectorAll(elementsPageName);
+        // Верх секций
+        const elementsPageTop = [];
+        elementsPage.forEach(element => {
+            elementsPageTop.push(element.offsetTop);
         });
-        // Количество элементов меню
-        const menuCount = elementsMenuWidth.length;
-        // Отступы прогресс-бара
-        const menuMarginLeft = elementsMenuWidth[0]/2;
-        const menuMarginRight = elementsMenuWidth[menuCount-1]/2;
-        // Прогресс-бар
-        const elementProgress = document.querySelector(elementProgressBgName);
-        // Установка стилей прогресс-бару
-        elementProgress.style['margin-left'] = menuMarginLeft+'px';
-        elementProgress.style['margin-right'] = menuMarginRight+'px';
+        // Верх конца страницы
+        const maxTop = document.documentElement.scrollHeight-document.documentElement.clientHeight+headerOffset;
+        // Замена верха последней секции
+        elementsPageTop[elementsPageTop.length-1] = Math.min(elementsPageTop[elementsPageTop.length-1],maxTop);
+        
+        const menuCount = elementsMenuCoord.length;
+        // console.log(elementsPageTop[0], elementsMenuCoord[0]);
+        for (let i=0; i < menuCount; i++ ) {
+            const currentMenu = elementsMenuCoord[i];
+            const currentSection = elementsPageTop[i];
+            
+            if (currentTop < currentSection){
+                
+                const prevMenu = elementsMenuCoord[i-1];
+                const prevSection = elementsPageTop[i-1];
+                const lengthSection = currentSection - prevSection;
+                const lengthMenu = currentMenu - prevMenu;
+                const progressPlus = (currentTop-prevSection)/(lengthSection/lengthMenu);
+                const progressFull = prevMenu + progressPlus;
 
-        console.log(currentTop);
+                // Прогресс-бар
+                const elementProgress = document.querySelector(elementProgressName);
+                elementProgress.style.width = progressFull+'px';
+                
+                console.log(progressPlus);
+                break;
+            }
+        }
     });
-    
-    // const elementsPage = document.querySelectorAll(elementsPageName);
-
-    // Верх секций
-    // const elementsPageTop = [];
-    // elementsPage.forEach(element => {
-    //     elementsPageTop.push(element.offsetTop);
-    // });
-    // Верх конца страницы
-    // const maxTop = document.documentElement.scrollHeight-document.documentElement.clientHeight+headerOffset;
-    // Замена верха последней секции
-    // elementsPageTop[elementsPageTop.length-1] = Math.min(elementsPageTop[elementsPageTop.length-1],maxTop);
-    
-
-    
-    // const menuWidth = elementsMenuWidth.reduce((a, b) => a + b, 0) - menuMarginLeft - menuMarginRight;
-
-    
-    
-
-    // console.log(elementsMenu);
-    
-        // const docEl = document.documentElement;
-        // const currentTop = docEl.scrollTop;
-        // const maxTop = docEl.scrollHeight-docEl.clientHeight;
-    
 }

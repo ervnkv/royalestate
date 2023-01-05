@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Header.scss';
 import scriptScrollTo from './scriptScrollTo.js';
-// import scriptScroll from './scriptScroll.js';
+import scriptScroll from './scriptScroll.js';
 import scriptProgressMargin from './scriptProgressMargin.js';
 
 
@@ -18,7 +18,11 @@ export default function Header({TextBlocks}) {
 		);
 	});
 
-	const {menuMarginLeft, menuMarginRight} = scriptProgressMargin('.menu');
+
+	useEffect(() => {
+		const {elementsMenuCoord} = scriptProgressMargin('.menu', '.progress_bg');
+		scriptScroll(80, 'section', elementsMenuCoord, '.progress_solid');
+	});
 	
 	return(
 		<header className='header'>
@@ -36,7 +40,7 @@ export default function Header({TextBlocks}) {
 						{htmlTextBlock}
 					</div>
 					
-					<div className='progress_bg' style={{marginLeft: menuMarginLeft, marginRight: menuMarginRight}}>
+					<div className='progress_bg'>
 						<div className='progress_solid'>
 						</div>
 					</div>
