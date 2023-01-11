@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './components/Header.js';
+import Cover from './components/Cover.js';
 import TextBlockHor from './components/TextBlockHor.js';
 import Calculator from './components/Calculator.js';
 import TextBlockHorBtn from './components/TextBlockHorBtn.js';
@@ -13,18 +14,20 @@ import Footer from './components/Footer.js';
 
 
 
+
 // Верстка сайта
 export default function App(){
 	return (
 		<>
 			<Header TextBlocks={TextBlockContent0}/>
 			<div id='main' className='wrapper'>
+				<Cover/>
 				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
 				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2'/>
 				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
 				<TextBlockVert TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
 				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
-				<Contacts Socials={Socials} Title='СВЯЗАТЬСЯ С НАМИ' ID='section-6'/>
+				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6'/>
 			</div>
 			<Footer/>						
 		</>
@@ -95,16 +98,30 @@ const TextBlockContent2= [
 	{
 		head: 'Оценка квартиры', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
-		priceMain: '30 000 ₽',
+		priceMain: '30 000 р',
 		priceSecond: '',
 		id: 11,
 	},
 	{
 		head: 'Оценка квартиры, судебное сопровождение', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. На основе сметы, мы подготовим документы для суда и будем сопровождать Вас в суде. В результате Вы получите денежную компенсацию от застройщика или устранение дефектов квартиры.',
-		priceMain: '30 000 ₽',
+		priceMain: '30 000 р',
 		priceSecond: '+10% от иска',
 		id: 12,
+	},
+	{
+		head: 'Оценка квартиры', 
+		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
+		priceMain: '80 000 р',
+		priceSecond: '',
+		id: 13,
+	},
+	{
+		head: 'Оценка квартиры', 
+		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
+		priceMain: '110 000 р',
+		priceSecond: '',
+		id: 14,
 	},
 ];
 

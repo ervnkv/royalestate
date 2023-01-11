@@ -102,7 +102,7 @@ export default class Calculator extends Component {
 					break;
 			}
 			return(
-				<h2>{result} p</h2>
+				<h3>{result} p</h3>
 			);
 		};
 		
@@ -114,19 +114,19 @@ export default class Calculator extends Component {
 					<img src='../../img/icons/floorplan.png' alt='floorplan'></img>
 					<div className='f-column calc'>
 						<div className='f-row'>
-							<h3 className='calcText'>Площадь квартиры</h3>
+							<h4 className='calcText'>Площадь квартиры</h4>
 							<div className='calcBlock'>
 								{htmlAreaButtons}	
 							</div>
 						</div>
 						<div className='f-row'>
-							<h3 className='calcText'>Количество дефектов</h3>
+							<h4 className='calcText'>Количество дефектов</h4>
 							<div className='calcBlock'>
 								{htmlCountButtons}	
 							</div>
 						</div>
 						<div className='f-row'>
-							<h3 className='calcText'>Примерная сумма иска:</h3>
+							<h4 className='calcText'>Примерная сумма иска:</h4>
 							{getSum()}
 						</div>
 					</div>
@@ -138,15 +138,15 @@ export default class Calculator extends Component {
 
 const areaButtons = [
 	{
-		tittle: '0-19',
+		tittle: '25-40',
 		id: 'a1',
 	},
 	{
-		tittle: '20-40',
+		tittle: '40-80',
 		id: 'a2',
 	},
 	{
-		tittle: '40+',
+		tittle: '80+',
 		id: 'a3',
 	},
 ];

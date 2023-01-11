@@ -8,7 +8,7 @@ export default function TextBlockHor({TextBlocks,Title,ID}) {
 			<div key={id} className='card f-column t-center'>
 				<img src={img} alt={imgAlt}></img>
 				<div className='f-column headText'>
-					<h3>{head}</h3>
+					<h4>{head}</h4>
 				</div>
 				<p>{content}</p>
 			</div>

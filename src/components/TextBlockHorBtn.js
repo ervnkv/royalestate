@@ -7,15 +7,15 @@ export default function TextBlockHorBtn({TextBlocks,Title,ID}) {
 		return(
 			<div key={id} className='card f-column t-center'>
 				<div className='f-column headText'>
-					<h3>{head}</h3>
+					<h4>{head}</h4>
 				</div>
 				<p>{content}</p>
 				<div className='f-column price'>
-					<h2>{priceMain}</h2>
-					<h3>{priceSecond}</h3>
+					<h4>{priceMain}</h4>
+					<h4>{priceSecond}</h4>
 				</div>
 				<button>
-					<h4>Оставить заявку</h4>
+					<h5>Оставить заявку</h5>
 				</button>
 			</div>
 		);

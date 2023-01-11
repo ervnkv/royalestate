@@ -30,12 +30,12 @@ export default function Header({TextBlocks}) {
 				<div className='f-row header_logo'>
 					<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
 					<div className='header_logo_text'>
-						<h2>КЕДР</h2>
-						<p>оценка квартир</p>
+						<h1>ГРИФ</h1>
+						<p>Юридическая компания</p>
 					</div> 
 				</div>
 
-				<ul className='f-column'>
+				<ul className='f-column header-menu'>
 					<div className='f-row'>
 						{htmlTextBlock}
 					</div>
@@ -46,7 +46,7 @@ export default function Header({TextBlocks}) {
 					</div>
 				</ul>
 
-				<h2>+7 (812) 425-33-42</h2>
+				{/* <h3>+7 (812) 425-33-42</h3> */}
 			</div>	
 		</header>
 	);
