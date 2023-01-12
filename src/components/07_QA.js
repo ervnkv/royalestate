@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './QA.scss';
+import './07_QA.scss';
 
 
 export default function QA({TextBlocks,Title,ID}) {

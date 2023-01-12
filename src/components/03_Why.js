@@ -1,8 +1,8 @@
 import React from 'react';
-import './TextBlockHor.scss';
+import './03_Why.scss';
 
 
-export default function TextBlockHor({TextBlocks,Title,ID}) {
+export default function Why({TextBlocks,Title,ID}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,img,imgAlt,id}) =>{
 		return(
 			<div key={id} className='card f-column t-center'>
@@ -16,7 +16,7 @@ export default function TextBlockHor({TextBlocks,Title,ID}) {
 	});
 	
 	return(
-		<section id={ID} className='f-column textblock '>
+		<section id={ID} className='f-column why '>
 			<h2>{Title}</h2>
 			<div className='f-row container '>
 				{htmlTextBlock}	

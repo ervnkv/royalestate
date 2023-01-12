@@ -1,6 +1,6 @@
 $textMain: black;
 $textSecond: #626262;
-$textAccent: rgb(0, 71, 127);
+$textAccent: #00477f;
 
 * {
     font-family: 'Gothic A1', sans-serif; 
@@ -83,11 +83,19 @@ p{
     margin: 10px;
 }
 
+
+
+
 button{
     width: 170px;
     height: 40px;
     background: $textAccent;
     border-radius: 14px;
     border: none;
-    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.2);  
+        transform: translateY(-2px);
+    }
 }

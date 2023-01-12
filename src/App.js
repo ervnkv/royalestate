@@ -1,17 +1,15 @@
 import React from 'react';
 
-import Header from './components/Header.js';
-import Cover from './components/Cover.js';
-import TextBlockHor from './components/TextBlockHor.js';
-import Calculator from './components/Calculator.js';
-import TextBlockHorBtn from './components/TextBlockHorBtn.js';
-import TextBlockVert from './components/TextBlockVert.js';
-import QA from './components/QA.js';
-import Contacts from './components/Contacts.js';
-import Footer from './components/Footer.js';
-
-
-
+import Header from './components/01_Header.js';
+import Cover from './components/02_Cover.js';
+import Why from './components/03_Why.js';
+import Cost from './components/04_Cost.js';
+import Calculator from './components/05_Calculator.js';
+import Process from './components/06_Process.js';
+import QA from './components/07_QA.js';
+import Contacts from './components/08_Contacts.js';
+import Footer from './components/09_Footer.js';
+import Call from './components/20_Call.js';
 
 
 
@@ -20,16 +18,17 @@ export default function App(){
 	return (
 		<>
 			<Header TextBlocks={TextBlockContent0}/>
+			<Cover ID='section-0'/>
 			<div id='main' className='wrapper'>
-				<Cover/>
-				<TextBlockHor TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
-				<TextBlockHorBtn TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2'/>
+				<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
+				<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2'/>
 				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
-				<TextBlockVert TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
+				<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
 				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
 				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6'/>
 			</div>
-			<Footer/>						
+			<Footer/>
+			<Call />						
 		</>
 	);
 }
@@ -38,6 +37,11 @@ export default function App(){
 
 // Наполнение сайта - Блок МЕНЮ
 const TextBlockContent0 = [
+	{
+		head: 'Начало',
+		link: 'section-0', 
+		id: 40,
+	},
 	{
 		head: 'Зачем',
 		link: 'section-1', 

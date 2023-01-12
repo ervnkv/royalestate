@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
-import './Header.scss';
-import scriptScrollTo from './scriptScrollTo.js';
-import scriptScroll from './scriptScroll.js';
-import scriptProgressMargin from './scriptProgressMargin.js';
-
+import React, {useState} from 'react';
+import './01_Header.scss';
+import scriptScrollTo from '../scripts/scriptScrollTo.js';
 
 export default function Header({TextBlocks}) {
+ 
+	const [OpenMenu, onOpenMenu] = useState(false);
+
 	let htmlTextBlock = TextBlocks.map(({head,link,id}) =>{
 		return(
 			<li 
@@ -17,16 +17,12 @@ export default function Header({TextBlocks}) {
 			>{head}</li>
 		);
 	});
-
-
-	useEffect(() => {
-		const {elementsMenuCoord} = scriptProgressMargin('.menu', '.progress_bg');
-		scriptScroll(80, 'section', elementsMenuCoord, '.progress_solid');
-	});
 	
+
 	return(
 		<header className='header'>
 			<div className='f-row wrapper'>
+				
 				<div className='f-row header_logo'>
 					<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
 					<div className='header_logo_text'>
@@ -35,18 +31,15 @@ export default function Header({TextBlocks}) {
 					</div> 
 				</div>
 
-				<ul className='f-column header-menu'>
-					<div className='f-row'>
+				<div className='menu-btn' onClick={() => onOpenMenu(!OpenMenu)}>	
+				</div>
+
+				<div className={OpenMenu ? 'menu-container active' : 'menu-container'}>
+					<div className='f-column menu-list'>
 						{htmlTextBlock}
 					</div>
-					
-					<div className='progress_bg'>
-						<div className='progress_solid'>
-						</div>
-					</div>
-				</ul>
+				</div>
 
-				{/* <h3>+7 (812) 425-33-42</h3> */}
 			</div>	
 		</header>
 	);

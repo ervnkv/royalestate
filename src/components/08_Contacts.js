@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contacts.scss';
+import './08_Contacts.scss';
 
 
 export default function Contacts({Socials,Title,ID}) {
@@ -7,7 +7,7 @@ export default function Contacts({Socials,Title,ID}) {
 		return(
 			<div key={id} className='social'>
 				<a href={link}> 
-					<img src={img} alt={imgAlt}></img>
+					<img src={img} alt={imgAlt} className='social-img'></img>
 				</a>
 			</div>
 		);
