@@ -9,6 +9,7 @@ import Process from './components/06_Process.js';
 import QA from './components/07_QA.js';
 import Contacts from './components/08_Contacts.js';
 import Footer from './components/09_Footer.js';
+import CallBtn from './components/10_CallBtn.js';
 import Call from './components/20_Call.js';
 
 
@@ -29,7 +30,8 @@ export default function App(){
 				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)}/>
 			</div>
 			<Footer/>
-			<Call open={isCallOpen} onClose={() => setCallOpen(false)}/>						
+			<CallBtn openCall={() => setCallOpen(true)}/>
+			{isCallOpen?  <Call onClose={() => setCallOpen(false)}/> : null}					
 		</>
 	);
 }

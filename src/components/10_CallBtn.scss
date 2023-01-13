@@ -1,0 +1,18 @@
+.callBtn{
+  position: fixed;
+  top: 50%;
+  margin-top: -125px;
+  right: 0;
+  button{
+    width: 50px;
+    height: 250px;
+    background-color: rgb(22, 110, 29);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h5{
+      writing-mode:vertical-rl
+    }
+    
+  }
+}

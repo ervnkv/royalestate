@@ -1,9 +1,20 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './20_Call.scss';
 
-export default function Call({open, onClose}) {
+export default function Call ({onClose}) {
+	
+	useEffect(() => {
+		function handleEscapeKey(event='KeyboardEvent') {
+			if (event.code === 'Escape') {
+				onClose();
+			}
+		}
+		document.addEventListener('keydown', handleEscapeKey);
+		return () => document.removeEventListener('keydown', handleEscapeKey);
+	}, []);
+
 	return(
-		<div className={open ? 'overlay active' : 'overlay'} onClick={onClose}>
+		<div className='overlay' onClick={onClose}>
 			<div className="f-column overlay-content" onClick={(e) => e.stopPropagation()}>
 				<h3>Пожалуйста, оставьте Ваши<br></br> контактные данные</h3>
 				<div className='f-column form'>
@@ -19,4 +30,5 @@ export default function Call({open, onClose}) {
 			</div>
 		</div>
 	);
+
 }
