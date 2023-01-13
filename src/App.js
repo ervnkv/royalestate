@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import Header from './components/01_Header.js';
 import Cover from './components/02_Cover.js';
@@ -15,20 +15,21 @@ import Call from './components/20_Call.js';
 
 // Верстка сайта
 export default function App(){
+	const [isCallOpen, setCallOpen] = useState(false);
 	return (
 		<>
 			<Header TextBlocks={TextBlockContent0}/>
-			<Cover ID='section-0'/>
+			<Cover ID='section-0' openCall={() => setCallOpen(true)}/>
 			<div id='main' className='wrapper'>
 				<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
-				<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2'/>
+				<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)}/>
 				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
 				<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
 				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
-				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6'/>
+				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)}/>
 			</div>
 			<Footer/>
-			<Call />						
+			<Call open={isCallOpen} onClose={() => setCallOpen(false)}/>						
 		</>
 	);
 }
@@ -113,20 +114,20 @@ const TextBlockContent2= [
 		priceSecond: '+10% от иска',
 		id: 12,
 	},
-	{
-		head: 'Оценка квартиры', 
-		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
-		priceMain: '80 000 р',
-		priceSecond: '',
-		id: 13,
-	},
-	{
-		head: 'Оценка квартиры', 
-		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
-		priceMain: '110 000 р',
-		priceSecond: '',
-		id: 14,
-	},
+	// {
+	// 	head: 'Оценка квартиры', 
+	// 	content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
+	// 	priceMain: '80 000 р',
+	// 	priceSecond: '',
+	// 	id: 13,
+	// },
+	// {
+	// 	head: 'Оценка квартиры', 
+	// 	content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
+	// 	priceMain: '110 000 р',
+	// 	priceSecond: '',
+	// 	id: 14,
+	// },
 ];
 
 // Наполнение сайта - Блок ПРОЦЕСС СОТРУДНИЧЕСТВА 

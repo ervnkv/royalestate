@@ -1,9 +1,8 @@
 import React from 'react';
 import './02_Cover.scss';
-import scriptShowOverlay from '../scripts/scriptShowOverlay';
 
 
-export default function Cover({ID}) {
+export default function Cover({ID,openCall}) {
 	return(
 		<section id={ID} className='cover'>
 			
@@ -11,7 +10,7 @@ export default function Cover({ID}) {
 				<div className='f-row content'>
 					<div className='f-column text'>
 						<h2>КУПИЛИ КВАРТИРУ С ДЕФЕКТАМИ?</h2>
-						<button onClick={scriptShowOverlay}>
+						<button onClick={openCall}>
 							<h5>Свяжитесь с нами</h5>
 						</button>
 					</div>

@@ -2,7 +2,7 @@ import React from 'react';
 import './04_Cost.scss';
 
 
-export default function Cost({TextBlocks,Title,ID}) {
+export default function Cost({TextBlocks,Title,ID,openCall}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,priceMain,priceSecond,id}) =>{
 		return(
 			<div key={id} className='card f-column t-center'>
@@ -14,7 +14,7 @@ export default function Cost({TextBlocks,Title,ID}) {
 					<h4>{priceMain}</h4>
 					<h4>{priceSecond}</h4>
 				</div>
-				<button>
+				<button onClick={openCall}>
 					<h5>Оставить заявку</h5>
 				</button>
 			</div>

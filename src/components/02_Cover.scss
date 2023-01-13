@@ -6,7 +6,8 @@
     align-items:center;  
     .container{
         background-color: $textAccent;
-        width: 100%;
+        min-width: 1200px;
+        // width: 100%;
         background-image: url("../../public/img/cover-bg1.svg");
         background-position: center;
         background-size:cover;
