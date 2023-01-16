@@ -6,6 +6,7 @@
     
     .container{
         align-items:flex-start;
+        flex-wrap: wrap;
         .card{
             width: 350px;
             margin: 30px;

@@ -27,13 +27,10 @@
             .cardHead{
                 &:hover{
                     background-color: #f5f5f5;
-                    // border-color: #cfcfcf;
-                    
                     cursor: pointer;
                 }
                 &.active{
                     background-color: #f0f0f0;
-                    // border-color: #b3d7e7;
                     border-radius: 8px 8px 0 0;
                 }
             }
@@ -52,5 +49,16 @@
         }
     }
 }
-
+@media (max-width:1200px){
+    .qa {
+        .container{
+            padding: 0 10px;
+            .card{ 
+                .cardHead, .cardContent{
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
 

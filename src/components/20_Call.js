@@ -29,7 +29,7 @@ export default function Call ({onClose,packageName}) {
 					console.log(error);	
 				})
 			.then(()=>{
-				timerID = setTimeout(onClose,6000);
+				timerID = setTimeout(onClose,5000);
 			});
 	};
 
@@ -51,7 +51,7 @@ function callOpen(packageName) {
 			<h3>Оставьте свои контактные данные<br></br>и мы с вами свяжемся</h3>
 			<div className='f-column form'>
 				<label>Номер телефона</label>
-				<input type='tel' name='tel' placeholder='+7 000 000 00 00'/>
+				<input type='tel' name='tel' placeholder='+7 000 000 00 00' autoFocus/>
 			</div>
 			<div className='f-column send'>
 				<button type='submit'>
