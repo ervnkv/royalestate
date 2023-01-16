@@ -52,6 +52,14 @@
         text-align: center;
       }
     }
+    .message{
+      display: flex;
+      align-items: center;
+      margin: auto 0;
+      h3{
+        margin: 0;
+      }
+    }
     
   }
 }
