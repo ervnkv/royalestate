@@ -17,21 +17,22 @@ import Call from './components/20_Call.js';
 // Верстка сайта
 export default function App(){
 	const [isCallOpen, setCallOpen] = useState(false);
+	const [packageName, setPackage] = useState('');
 	return (
 		<>
 			<Header TextBlocks={TextBlockContent0}/>
-			<Cover ID='section-0' openCall={() => setCallOpen(true)}/>
+			<Cover ID='section-0' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<div id='main' className='wrapper'>
 				<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
-				<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)}/>
+				<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
 				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
 				<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
 				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
-				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)}/>
+				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			</div>
 			<Footer/>
-			<CallBtn openCall={() => setCallOpen(true)}/>
-			{isCallOpen?  <Call onClose={() => setCallOpen(false)}/> : null}					
+			<CallBtn openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
+			{isCallOpen?  <Call onClose={() => setCallOpen(false)} packageName={packageName}/> : null}					
 		</>
 	);
 }
