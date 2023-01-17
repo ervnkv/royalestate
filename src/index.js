@@ -13,7 +13,3 @@ root.render(
     <App />
   // </React.StrictMode>
 );
-
-// window.addEventListener('hashchange', function () {
-//   window.scrollTo(window.scrollX, window.scrollY - 100);
-// });

@@ -1,6 +1,7 @@
 @import '../index.scss';
 
 header{
+    z-index: 2;
     background-color: rgb(255, 255, 255);  
     position: fixed;  
     top: 0; 
@@ -10,10 +11,12 @@ header{
         height: 80px;
         justify-content:flex-start;
         align-items:center;
+        position: relative;
         .header_logo_text{
             margin: 0 auto;
             display: flex;
             flex-direction: column;
+            margin-left: 10px;
         }
         
         .menu-btn, .call-btn{
@@ -35,6 +38,7 @@ header{
             background-image: url("../../public/img/icons/phone.svg");
         }
         .menu-container{
+            
             display: none;
             position: absolute;
             right:0;
