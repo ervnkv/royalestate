@@ -5,7 +5,7 @@ import './04_Cost.scss';
 export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,priceMain,priceSecond,id}) =>{
 		return(
-			<div key={id} className='card f-column t-center'>
+			<div key={id} className='f-column t-center card '>
 				<div className='f-column headText'>
 					<h4>{head}</h4>
 				</div>

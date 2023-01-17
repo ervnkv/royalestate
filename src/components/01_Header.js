@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './01_Header.scss';
 import scriptScrollTo from '../scripts/scriptScrollTo.js';
 
-export default function Header({TextBlocks}) {
+export default function Header({TextBlocks,openCall,setPackageName}) {
  
 	const [OpenMenu, onOpenMenu] = useState(false);
 
@@ -23,14 +23,20 @@ export default function Header({TextBlocks}) {
 		<header className='header'>
 			<div className='f-row wrapper'>
 				
-				<div className='f-row header_logo'>
-					<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
-					<div className='header_logo_text'>
-						<h1>ГРИФ</h1>
-						<p>Юридическая компания</p>
-					</div> 
-				</div>
 
+				<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
+				
+				<div className='header_logo_text'>
+					<h1>ГРИФ</h1>
+					<p>Юридическая компания</p>
+				</div> 
+
+				<div className='call-btn' onClick={()=>{
+					setPackageName();
+					openCall();
+					}}>
+				</div>
+				
 				<div className='menu-btn' onClick={() => onOpenMenu(!OpenMenu)}>	
 				</div>
 

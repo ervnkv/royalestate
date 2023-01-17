@@ -20,7 +20,7 @@ export default function App(){
 	const [packageName, setPackage] = useState('');
 	return (
 		<>
-			<Header TextBlocks={TextBlockContent0}/>
+			<Header TextBlocks={TextBlockContent0} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<Cover ID='section-0' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<div id='main' className='wrapper'>
 				<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
