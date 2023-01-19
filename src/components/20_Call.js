@@ -3,21 +3,27 @@ import './20_Call.scss';
 import loader from '../lib/loader';
 import emailjs from '@emailjs/browser';
 
-export default function Call ({onClose,packageName}) {
+export default function Call ({onClose, packageName}) {
 	const [content, setContent] = useState(callOpen(packageName));
 	
 	let timerID = null;
+
+	const handleEscapeKey = (event='KeyboardEvent') => {
+		if (event.code === 'Escape') {
+			clearTimeout(timerID);
+			onClose();
+		}
+	};
 	
 	useEffect(() => {
-		function handleEscapeKey(event='KeyboardEvent') {
-			if (event.code === 'Escape') {
-				clearTimeout(timerID);
-				onClose();
-			}
-		}
+		document.querySelector('body').classList.add('scrollstop');
 		document.addEventListener('keydown', handleEscapeKey);
-		return () => document.removeEventListener('keydown', handleEscapeKey);
-	}, []);
+
+		return () => {
+			document.querySelector('body').classList.remove('scrollstop');
+			document.removeEventListener('keydown', handleEscapeKey);
+		};
+	});
 
 	const sendMessage = (e) => {
 		e.preventDefault();
@@ -34,10 +40,14 @@ export default function Call ({onClose,packageName}) {
 	};
 
 	return(
-		<div className='overlay' onClick={()=>{
-				clearTimeout(timerID);			
-				onClose();
-				}} onSubmit={sendMessage}>
+		<div 
+		className='overlay'
+		onClick={()=>{
+			clearTimeout(timerID);			
+			onClose();
+		}} 
+		onSubmit={sendMessage}
+		>
 			<form className="f-column overlay-content" onClick={(e) => e.stopPropagation()}>
 				{content}
 			</form>

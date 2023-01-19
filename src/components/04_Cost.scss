@@ -3,21 +3,27 @@
 .cost {
     z-index: 1;
     position: relative;
+    align-items: center;
     h2{
         width:fit-content;
         margin: 0 auto;
     }
     .container{
+        width:fit-content;
         align-items:flex-start;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: nowrap;
-        // border: solid 1px;
         overflow-x: hidden;
-        cursor: pointer;
+        // -webkit-overflow-scrolling: touch;
+        padding: 0 5px;
+        // cursor: grab;
+        // &.scrolling{
+        //     cursor:grabbing;
+        // }
         .card{
-            width: 280px;
+            min-width: 350px;
             min-height: 500px;
-            margin: 30px auto;
+            margin: 30px 20px;
             padding: 15px;
             align-items:center;
             background-color: rgb(255, 255, 255);
@@ -41,6 +47,7 @@
         }
     }
     .scroll-btn{
+        display: none;
         position:absolute;
         top: 50%;
         left: 0;
@@ -60,16 +67,20 @@
             right: 0;
             transform: translateX(50%) rotate(180deg);
         }
+        &.active{
+            display: block;
+        }
     }
 }
-
-
-@media (max-width:1400px){
+@media (max-width:1600px){
     .cost {
         margin: 0 50px;
         .container{
-            justify-content: flex-start;
-            flex-basis: 2;
+            width: 100%;
+            cursor: grab;
+            &.scrolling{
+                cursor:grabbing;
+            }
             .card{
                 min-width: calc(100%/3.18);
                 min-height: 500px;
@@ -79,46 +90,48 @@
     }
 }
 
+@media (max-width:1200px){
+    .cost {
+        margin: 0 50px;
+        .container{
+            .card{
+                min-height: 440px;
+                margin: 30px 10px;
+                .headText{
+                    min-height: 100px;
+                }
+                p{
+                    min-height: 100px;
+                }
+            }
+        }        
+    }
+}
 @media (max-width:1000px){
     .cost {
-        margin: 0 50px;
+        margin: 0 20px;
         .container{
-            justify-content: flex-start;
-            flex-basis: 2;
-            .card{
-                min-width: calc(100%/2.22);
-                min-height: 500px;
-                margin: 30px 20px;
-            }
-        }        
-    }
-}
-@media (max-width:700px){
-    .cost {
-        margin: 0 50px;
-        .container{
-            justify-content: flex-start;
-            flex-basis: 2;
             .card{
                 min-width: 300px;
-                min-height: 500px;
+                // min-height: 500px;
                 margin: 30px 10px;
             }
-        }        
+        }
+        .scroll-btn{
+            height: 40px;
+            width: 40px;
+        }      
     }
 }
-@media (max-width:700px){
+@media (max-width:450px){
     .cost {
-        margin: 0 30px;
         .container{
-            justify-content: flex-start;
-            flex-basis: 2;
             .card{
                 min-width: 95%;
-                min-height: 500px;
+                // min-height: 500px;
                 margin: 30px 10px;
             }
-        }        
+        }     
     }
 }
 

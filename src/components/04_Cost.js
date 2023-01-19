@@ -6,10 +6,13 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 	const containerRef = useRef(null);
 	const [scrollStart, setScrollStart] = useState(false);
 	const [currentX, setCurrentX] = useState(0);
+	const [btnLeft, setBtnLeft] = useState(false);
+	const [btnRight, setBtnRight] = useState(false);
 	
 	const startScroll = (e) => {
 		setScrollStart(true);
 		setCurrentX(e.pageX || e.touches[0].pageX);
+		console.log();
 	};
 
 	const scrolling = (e) => {
@@ -17,15 +20,32 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 		e.preventDefault();
 
 		const deltaX = currentX - (e.pageX || e.touches[0].pageX);
-		containerRef.current.scrollLeft += deltaX;
+
+		//не плавно
+		// containerRef.current.scrollLeft += deltaX;
+		// плавно
+		const currentLeft = containerRef.current.scrollLeft += deltaX;
+		containerRef.current.scrollTo({ left: currentLeft, top: 0, behavior: 'smooth' });
+
 		setCurrentX(e.pageX || e.touches[0].pageX);
+
+		checkBtnScroll();
+
+
+		
 	};
 
 	const stopScroll = () => {
 		setScrollStart(false);
 	};
 
-	useEffect(()=>{
+	const checkBtnScroll = () => {
+		containerRef.current.scrollLeft > 0 ? setBtnLeft(true) : setBtnLeft(false);
+		containerRef.current.scrollWidth - containerRef.current.clientWidth == containerRef.current.scrollLeft ? setBtnRight(false): setBtnRight(true);
+	};
+
+	useEffect(() => {
+		checkBtnScroll();
 
 		containerRef.current.addEventListener('mousedown', startScroll);
 		containerRef.current.addEventListener('mousemove', scrolling);
@@ -36,7 +56,7 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 		containerRef.current.addEventListener('touchmove', scrolling);
 		containerRef.current.addEventListener('touchend', stopScroll);
 
-		return ()=>{
+		return () => {
 			containerRef.current.removeEventListener('mousedown', startScroll);
 			containerRef.current.removeEventListener('mousemove', scrolling);
 			containerRef.current.removeEventListener('mouseup', stopScroll);
@@ -77,11 +97,11 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 			<h2>{Title}</h2>
 			<div
 			ref={containerRef}
-			className='f-row container'>
+			className={scrollStart ? 'f-row container scrolling' : 'f-row container'}>
 				{htmlTextBlock}	
 			</div>
-			<button className='scroll-btn left'/>
-			<button className='scroll-btn right'/>
+			<button className={btnLeft ? 'scroll-btn left active' : 'scroll-btn left'}/>
+			<button className={btnRight ? 'scroll-btn right active' : 'scroll-btn right'}/>
 		</section>
 	);
 }

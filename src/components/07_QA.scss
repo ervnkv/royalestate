@@ -32,20 +32,36 @@
                 &.active{
                     background-color: #f0f0f0;
                     border-radius: 8px 8px 0 0;
+                    
+                }
+                h5:last-child{
+                    rotate: 0;
+                    user-select: none;
+                    transition: all 0.6s ease;
+                    &.active{
+                        rotate: 180deg;
+                    }
                 }
             }
             .cardContent{
-                display: none;
+                // display: none;
+                display: flex;
                 align-items:flex-start;
-                margin: 1px 0 0 0;
-                padding: 10px;
-                height: auto;
                 background: #ffffff;
+                height: auto;
+                max-height: 0;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+
+                transition: all .6s ease;
                 &.active{
-                    display: flex;
                     border-radius: 0 0 8px 8px;
+                    max-height: 400px;
+                    margin: 1px 0 0 0;
+                    padding: 10px;
+                    }
                 }
-            }
         }
     }
 }

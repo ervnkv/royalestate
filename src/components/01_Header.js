@@ -1,23 +1,28 @@
 import React, {useState} from 'react';
 import './01_Header.scss';
-import scriptScrollTo from '../scripts/scriptScrollTo.js';
 
 export default function Header({TextBlocks,openCall,setPackageName}) {
- 
 	const [OpenMenu, onOpenMenu] = useState(false);
+
+	const scrollTo = (elementId) => {
+		const element = document.querySelector(`#${elementId}`);
+		const header = document.querySelector('header');
+		document.documentElement.scrollTo({top: element.offsetTop-header.clientHeight, behavior: 'smooth'});
+	};
+
 
 	let htmlTextBlock = TextBlocks.map(({head,link,id}) =>{
 		return(
 			<li 
 			className='menu'
 			key={id}
-			onClick = {() => {
-				scriptScrollTo('section',80,link);	
-			}}
-			>{head}</li>
+			onClick = {() => scrollTo(link)}
+			>
+				{head}
+			</li>
 		);
 	});
-	
+
 
 	return(
 		<header className='header'>
@@ -36,10 +41,14 @@ export default function Header({TextBlocks,openCall,setPackageName}) {
 					}}>
 				</div>
 				
-				<div className='menu-btn' onClick={() => onOpenMenu(!OpenMenu)}>	
+				<div
+				className='menu-btn' 
+				onClick={()=>onOpenMenu(!OpenMenu)}>
 				</div>
-
-				<div className={OpenMenu ? 'menu-container active' : 'menu-container'}>
+				<div 
+				className={OpenMenu ? 'menu-container active' : 'menu-container'}
+				onMouseLeave={()=>onOpenMenu(!OpenMenu)}
+				>
 					<div className='f-column menu-list'>
 						{htmlTextBlock}
 					</div>

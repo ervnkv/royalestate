@@ -12,9 +12,9 @@ export default function QA({TextBlocks,Title,ID}) {
 				className={isActive ? 'cardHead active' : 'cardHead'} 
 				onClick={() => setActive(!isActive)}>
 					<h5>{head}</h5>
-					<h5>▼</h5>
+					<h5 className={isActive ? 'active' : ''}>▼</h5>
 				</div>
-				<div className={isActive ? 'cardContent active' : 'cardContent'} >
+				<div className={isActive ? 'cardContent active' : 'cardContent'}>
 					<p>{content}</p>
 				</div>
 			</div>
