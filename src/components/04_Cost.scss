@@ -3,27 +3,36 @@
 .cost {
     z-index: 1;
     position: relative;
-    align-items: center;
+    padding: 0 25px;
+    width: 100%;
+    
     h2{
-        width:fit-content;
         margin: 0 auto;
     }
     .container{
-        width:fit-content;
-        align-items:flex-start;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: hidden;
-        // -webkit-overflow-scrolling: touch;
-        padding: 0 5px;
-        // cursor: grab;
-        // &.scrolling{
-        //     cursor:grabbing;
-        // }
+        // background-color: $textAccent;
+        margin-top: 30px;
+        align-items:stretch;
+        padding: 10px;
+        grid-gap: 20px;
+
+        overflow-x:auto;
+        scroll-snap-type: x;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &.grab{
+            cursor:grab;
+        }
+        &.grabbing{
+            cursor:grabbing;
+        }
         .card{
-            min-width: 350px;
-            min-height: 500px;
-            margin: 30px 20px;
+            // scroll-snap-align:center;
+            // scroll-snap-stop: always;
+            min-width: calc((100% - 40px)/3);
             padding: 15px;
             align-items:center;
             background-color: rgb(255, 255, 255);
@@ -32,7 +41,6 @@
             .headText{
                 min-height: 100px;
                 justify-content: center
-
             }
             p{
                 min-height: 200px;
@@ -51,8 +59,7 @@
         position:absolute;
         top: 50%;
         left: 0;
-        transform: translateY(-50%);
-        transform: translateX(-50%);
+        // transform: translateY(-50%);
         height: 50px;
         width: 50px;
         border-radius: 100%;
@@ -65,75 +72,61 @@
         &.right{
             left: auto;
             right: 0;
-            transform: translateX(50%) rotate(180deg);
+            transform: rotate(180deg);
         }
         &.active{
             display: block;
         }
     }
 }
-@media (max-width:1600px){
+@media (max-width:1320px){
     .cost {
-        margin: 0 50px;
+        padding: 0 25px;
         .container{
-            width: 100%;
-            cursor: grab;
-            &.scrolling{
-                cursor:grabbing;
-            }
+            padding: 10px;
+            grid-gap: 20px;
             .card{
-                min-width: calc(100%/3.18);
-                min-height: 500px;
-                margin: 30px 10px;
+                min-width: calc((100% - 40px)/3);
             }
         }        
     }
 }
 
-@media (max-width:1200px){
+@media (max-width:850px){
     .cost {
-        margin: 0 50px;
+        padding: 0 25px;
         .container{
+            padding: 10px;
+            grid-gap: 20px;
             .card{
-                min-height: 440px;
-                margin: 30px 10px;
+                min-width: calc((100% - 20px)/2);
                 .headText{
-                    min-height: 100px;
+                    min-height: 80px;
                 }
                 p{
-                    min-height: 100px;
+                    min-height: 200px;
                 }
+                .price{
+                    min-height: 50px;
+                } 
             }
         }        
     }
 }
-@media (max-width:1000px){
+@media (max-width:550px){
     .cost {
-        margin: 0 20px;
+        padding: 0 25px;
         .container{
+            padding: 10px;
+            grid-gap: 20px;
             .card{
-                min-width: 300px;
-                // min-height: 500px;
-                margin: 30px 10px;
+                min-width: 100%;
             }
-        }
-        .scroll-btn{
-            height: 40px;
-            width: 40px;
-        }      
+        }        
     }
 }
-@media (max-width:450px){
-    .cost {
-        .container{
-            .card{
-                min-width: 95%;
-                // min-height: 500px;
-                margin: 30px 10px;
-            }
-        }     
-    }
-}
+
+
 
 
 
