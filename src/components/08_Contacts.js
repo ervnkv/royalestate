@@ -24,7 +24,9 @@ export default function Contacts({Socials,Title,ID,openCall,setPackageName}) {
 							}}>
 						<h5>Оставить заявку</h5>
 					</button>
-					{htmlTextBlock}	
+					<div className='f-row social-container'>
+						{htmlTextBlock}
+					</div>
 					<a href='tel:+78124253342'>+7 (812) 425-33-42</a>
 				</div>
 			</div>	

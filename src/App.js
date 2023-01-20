@@ -51,14 +51,14 @@ const TextBlockContent0 = [
 		id: 41,
 	},
 	{
-		head: 'Затраты',
-		link: 'section-2', 
-		id: 42,
-	},
-	{
 		head: 'Выгода',
 		link: 'section-3', 
 		id: 43,
+	},
+	{
+		head: 'Затраты',
+		link: 'section-2', 
+		id: 42,
 	},
 	{
 		head: 'Процесс',

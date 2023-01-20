@@ -1,0 +1,70 @@
+@import '../index.scss';
+
+#carousel-container{
+    margin: 50px 0;
+    align-items:stretch;
+    padding: 20px;
+    grid-gap: 20px;
+    overflow-x:auto;
+    scroll-snap-type: x;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .card{
+        position: relative;
+        min-width: calc((100% - 40px)/3);
+    }
+    &.grab{
+        cursor:grab;
+    }
+    &.grabbing{
+        cursor:grabbing;
+    }
+    #carousel-btn{
+        display: none;
+        position:absolute;
+        top: 50%;
+        left: 0;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.3); 
+        background-color: white;
+        background-image: url("../../public/img/icons/arrow-left.svg");
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+        &.right{
+            left: auto;
+            right: 0;
+            transform: translateX(50%) rotate(180deg);
+        }
+        &.active{
+            display: block;
+        }
+    }
+}
+   
+
+@media (max-width:850px){
+    #carousel-container{ // Компонент Carousel
+        .card{
+            min-width: calc((100% - 10px)/2);
+        }
+    } 
+}       
+@media (max-width:550px){
+    #carousel-container{ // Компонент Carousel
+        grid-gap: 50px;
+        .card{
+            min-width: calc(100%);
+        }
+    }
+}        
+
+
+
+
+

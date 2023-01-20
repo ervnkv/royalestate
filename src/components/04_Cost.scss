@@ -4,7 +4,6 @@
     z-index: 1;
     width: 100%;
     padding: 0 25px;
-    // background-color: $textAccent;
     background: rgb(0,71,127);
     background: radial-gradient(circle, rgba(0,71,127,1) 0%, rgba(0,88,127,1) 34%, rgba(0,71,127,1) 100%);    
     h2{
@@ -15,39 +14,13 @@
     }
     .wrapper{
         position: relative;
-        
-        .container{
-            // background-color: $textAccent;
-            // position: relative;
-            margin: 50px 0;
-            align-items:stretch;
-            padding: 20px;
-            grid-gap: 20px;
-
-            overflow-x:auto;
-            scroll-snap-type: x;
-            scrollbar-width: none;
-            &::-webkit-scrollbar {
-                display: none;
-            }
-
-            &.grab{
-                cursor:grab;
-            }
-            &.grabbing{
-                cursor:grabbing;
-            }
+        .container{ // Компонент Carousel
             .card{
-                // scroll-snap-align:center;
-                // scroll-snap-stop: always;
-                position: relative;
-                min-width: calc((100% - 30px)/3);
-                padding: 15px;
                 align-items:center;
                 background-color: rgba(255, 255, 255);
                 box-shadow: -2px 5px 5px rgba(0, 0, 0, 0.35);
                 border-radius: 21px;
-
+                padding: 15px;
                 &.best {
                     animation: border-pulsate 2s infinite;
                     @keyframes border-pulsate {
@@ -69,8 +42,6 @@
                         right: -5px;
                     }
                 }
-
-
                 .headText{
                     min-height: 100px;
                     justify-content: center
@@ -86,83 +57,16 @@
                     }
                 }            
             }
-            .scroll-btn{
-
-                display: none;
-                position:absolute;
-                top: 50%;
-                left: 0;
-                transform: translateX(-50%);
-                height: 50px;
-                width: 50px;
-                border-radius: 100%;
-                box-shadow: 0px 10px 20px rgba(0,0,0,0.3); 
-                background-color: white;
-                background-image: url("../../public/img/icons/arrow-left.svg");
-                background-size: 60%;
-                background-repeat: no-repeat;
-                background-position: center;
+            .scroll-btn{ // Компонент Carousel
                 &.right{
-                    left: auto;
-                    right: 0;
-                    transform: translateX(50%) rotate(180deg);
                 }
                 &.active{
-                    display: block;
                 }
-                
             }
-        
         }
     }
 }
-@media (max-width:1320px){
-    .cost {
-        padding: 0 25px;
-        .wrapper{
-            .container{
-                grid-gap: 20px;
-                .card{
-                    min-width: calc((100% - 30px)/3);
-                }
-            } 
-        }       
-    }
-}
 
-@media (max-width:850px){
-    .cost {
-        .wrapper{
-            .container{
-                grid-gap: 20px;
-                .card{
-                    min-width: calc((100% - 10px)/2);
-                    .headText{
-                        min-height: 80px;
-                    }
-                    p{
-                        min-height: 200px;
-                    }
-                    .price{
-                        min-height: 50px;
-                    } 
-                }
-            } 
-        }       
-    }
-}
-@media (max-width:550px){
-    .cost {
-        .wrapper{
-            .container{
-                grid-gap: 40px;
-                .card{
-                    min-width: calc(100%);
-                }
-            }
-        }        
-    }
-}
 
 
 

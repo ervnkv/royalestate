@@ -1,6 +1,7 @@
 import React from 'react';
 import './03_Why.scss';
 
+import Carousel from './90_Carousel.js';
 
 export default function Why({TextBlocks,Title,ID}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,img,imgAlt,id}) =>{
@@ -18,9 +19,7 @@ export default function Why({TextBlocks,Title,ID}) {
 		<section id={ID} className='f-column why'>
 			<h2>{Title}</h2>
 			<div className='wrapper'>
-				<div className='f-row container'>
-					{htmlTextBlock}
-				</div>
+				<Carousel htmlTextBlock={htmlTextBlock}/>
 			</div>
 		</section>
 	);
