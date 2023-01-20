@@ -17,8 +17,10 @@ export default function Why({TextBlocks,Title,ID}) {
 	return(
 		<section id={ID} className='f-column why'>
 			<h2>{Title}</h2>
-			<div className='f-row container'>
-				{htmlTextBlock}
+			<div className='wrapper'>
+				<div className='f-row container'>
+					{htmlTextBlock}
+				</div>
 			</div>
 		</section>
 	);

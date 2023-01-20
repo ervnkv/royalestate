@@ -16,15 +16,17 @@ export default function Contacts({Socials,Title,ID,openCall,setPackageName}) {
 	return(
 		<section id={ID} className='f-column contacts'>
 			<h2>{Title}</h2>
-			<div className='f-row container'>
-				<button onClick={()=>{
-						setPackageName();
-						openCall();
-						}}>
-					<h5>Оставить заявку</h5>
-				</button>
-				{htmlTextBlock}	
-				<a href='tel:+78124253342'>+7 (812) 425-33-42</a>
+			<div className='wrapper'>
+				<div className='f-row container'>
+					<button onClick={()=>{
+							setPackageName();
+							openCall();
+							}}>
+						<h5>Оставить заявку</h5>
+					</button>
+					{htmlTextBlock}	
+					<a href='tel:+78124253342'>+7 (812) 425-33-42</a>
+				</div>
 			</div>	
 		</section>
 	);

@@ -27,9 +27,8 @@ export default function Header({TextBlocks,openCall,setPackageName}) {
 	return(
 		<header className='header'>
 			<div className='f-row wrapper'>
-				
 				<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
-				
+
 				<div className='header_logo_text'>
 					<h1>ГРИФ</h1>
 					<p>Юридическая компания</p>

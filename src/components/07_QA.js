@@ -24,9 +24,11 @@ export default function QA({TextBlocks,Title,ID}) {
 	return(
 		<section id={ID} className='f-column qa'>
 			<h2>{Title}</h2>
-			<div className='f-column container'>
-				{htmlTextBlock}
-			</div>	
+			<div className='wrapper'>
+				<div className='f-column container'>
+					{htmlTextBlock}
+				</div>
+			</div>
 		</section>
 	);
 }

@@ -23,14 +23,12 @@ export default function App(){
 		<>
 			<Header TextBlocks={TextBlockContent0} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<Cover ID='section-0' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			<div id='main' className='wrapper'>
-				<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
-				<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
-				<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
-				<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
-				<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
-				<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			</div>
+			<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
+			<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
+			<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
+			<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
+			<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
+			<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<Footer/>
 			<CallBtn openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			{isCallOpen?  <Call onClose={() => setCallOpen(false)} packageName={packageName}/> : null}					
@@ -105,31 +103,35 @@ const TextBlockContent1= [
 // Наполнение сайта - Блок ПАКЕТЫ УСЛУГ
 const TextBlockContent2= [
 	{
-		head: 'Оценка квартиры', 
+		head: 'Пакет услуг - 1. Лучший выбор', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
 		priceMain: '30 000 р',
 		priceSecond: '',
+		best: true,
 		id: 11,
 	},
 	{
-		head: 'Оценка квартиры, судебное сопровождение', 
+		head: 'Пакет услуг - 2', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. На основе сметы, мы подготовим документы для суда и будем сопровождать Вас в суде. В результате Вы получите денежную компенсацию от застройщика или устранение дефектов квартиры.',
 		priceMain: '30 000 р',
 		priceSecond: '+10% от иска',
+		best: false,
 		id: 12,
 	},
 	{
-		head: 'Оценка квартиры', 
+		head: 'Пакет услуг - 3', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
 		priceMain: '80 000 р',
 		priceSecond: '',
+		best: false,
 		id: 13,
 	},
 	{
-		head: 'Оценка квартиры', 
+		head: 'Пакет услуг - 4', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
 		priceMain: '110 000 р',
 		priceSecond: '',
+		best: false,
 		id: 14,
 	},
 ];

@@ -18,9 +18,11 @@ export default function Process({TextBlocks,Title,ID}) {
 	return(
 		<section id={ID} className='f-column process '>
 			<h2>{Title}</h2>
-			<div className='f-column container '>
-				{htmlTextBlock}	
-			</div>	
+			<div className='wrapper'>
+				<div className='f-column container '>
+					{htmlTextBlock}	
+				</div>
+			</div>
 		</section>
 	);
 }

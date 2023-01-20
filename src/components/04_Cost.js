@@ -91,12 +91,12 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 	});
 
 
-	const htmlTextBlock = TextBlocks.map(({head,content,priceMain,priceSecond,id}) =>{
+	const htmlTextBlock = TextBlocks.map(({head,content,priceMain,priceSecond,best,id}) =>{
 		return(
 			<div 
 			key={id}
 			ref={cardRef} 
-			className='f-column t-center card'>
+			className={best?'f-column t-center card  best':'f-column t-center card'}>
 				<div className='f-column headText'>
 					<h4>{head}</h4>
 				</div>
@@ -118,13 +118,15 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 	return(
 		<section id={ID} className='f-column cost'>
 			<h2>{Title}</h2>
-			<div
-			ref={containerRef}
-			className='f-row container'>
-				{htmlTextBlock}	
+			<div className='wrapper'>
+				<div
+				ref={containerRef}
+				className='f-row container'>
+					{htmlTextBlock}	
+					<button onClick={movePrev} className={btnLeft ? 'scroll-btn left active' : 'scroll-btn left'}/>
+					<button onClick={moveNext} className={btnRight ? 'scroll-btn right active' : 'scroll-btn right'}/>
+				</div>
 			</div>
-			<button onClick={movePrev} className={btnLeft ? 'scroll-btn left active' : 'scroll-btn left'}/>
-			<button onClick={moveNext} className={btnRight ? 'scroll-btn right active' : 'scroll-btn right'}/>
 		</section>
 	);
 }
