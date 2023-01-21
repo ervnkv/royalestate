@@ -17,7 +17,7 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 				<p>{content}</p>
 				<div className='f-column price'>
 					<h4>{priceMain}</h4>
-					<h4>{priceSecond}</h4>
+					<h5>{priceSecond}</h5>
 				</div>
 				<button onClick={()=>{
 					setPackageName(head);

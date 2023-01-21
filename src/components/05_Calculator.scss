@@ -2,105 +2,133 @@
 
 .calculator {
     margin: 30px 0; 
-    align-items:center;  
-    .container{
-        display: flex;
-        width: 100%;
-        align-items:center;
-        justify-content: space-between;
-        margin: 30px 0;
-        padding: 0 60px;
-        img{
-            width: 450px;
-            cursor:pointer;
-        }
-        .calc{
-            width: 100%;
-            padding-left: 20px;
-            .f-row{
-                margin: 20px 0;
-            }
-            .btnRoomArea{
-                background-color: rgb(255, 255, 255);
-                width: 55px;
-                height: 55px;
-                margin: 2px;
-                border-radius:100%;
-                // border-color: rgb(226, 226, 226);
-                // border-width: 1px;
-                // border-style:solid;
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                color: $textMain;
-
-                &:hover{
-                    // background-color: rgb(233, 233, 233);
-                    border: none;
-                    cursor: pointer;
-                    transform: translateY(-4px);
-                }
-                &.active{
-                    background-color: $textAccent;
-                    border: none;
-                    font-weight: 800;
-                    color: white;
-                    // border-color: rgb(82, 102, 216);
-                }
-            }
-        }  
-    }
-}
-
-@media (max-width:1200px){
-    .calculator {
+    align-items:center;
+    .wrapper{
         .container{
-            display: flex;
+            justify-content:center;
             width: 100%;
-            align-items:center;
-            justify-content: space-between;
-            margin: 30px 0;
-            padding: 0 50px;
-            flex-direction: column;
-            img{
-                padding: 50px;
-                width: 80%;
-                cursor:pointer;
-            }
             .calc{
                 width: 100%;
-                padding-left: 20px;
-                .f-row{
-                    flex-direction: column;
-                    margin: 20px 0;
+                background-color: grey;
+
+                margin: 0 30%;
+                margin-top: 50px;
+                border-radius: 20px;
+                h5{
+                    color: $textSecond;
+                    position: absolute;
+                    left: 5px;
+                    top: 5px;
+                    font-weight: 400;
                 }
-                .btnRoomArea{
-                    background-color: rgb(255, 255, 255);
-                    width: 55px;
-                    height: 55px;
-                    margin: 2px;
-                    border-radius:100%;
-                    // border-color: rgb(226, 226, 226);
-                    // border-width: 1px;
-                    // border-style:solid;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    color: $textMain;
     
-                    &:hover{
-                        // background-color: rgb(233, 233, 233);
-                        border: none;
-                        cursor: pointer;
-                        transform: translateY(-4px);
+                .calc-top{
+                    // height: 80px;
+                    border-radius: 20px 20px 0 0;
+                    padding: 20px;
+                    background-color: rgb(43, 43, 43);
+                    .calc-result{
+                        position: relative;
+                        width: 100%;
+                        background-color: rgb(214, 214, 214);
+
+                        justify-content: center;
+                        align-items: center;
+
+                        h3{
+                            margin: 30px auto 10px 10px;
+                            color: $textAccent;
+                            font-size: 30px;
+                        }
                     }
-                    &.active{
-                        background-color: $textAccent;
-                        border: none;
-                        font-weight: 800;
-                        color: white;
-                        // border-color: rgb(82, 102, 216);
+                }
+                .calc-main{
+                    border-radius: 0 0 20px 20px;
+                    padding: 20px;
+                    gap: 10px;
+                    background-color: rgb(71, 71, 71);
+                    .calc-btns{
+                        position: relative;
+                        padding: 10px;
+                        padding-top: 30px;
+                        gap: 10px;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid rgb(43, 43, 43);
+                        background-color: rgba(43, 43, 43, 0.178);
+                        h5{
+                            color: rgb(0, 0, 0);
+                            font-weight: 800;
+                        }
+
+                        .btnRoomArea{
+                            background-color: rgb(214, 214, 214);
+                            width: 100%;
+                            height: 40px;
+                            margin: 2px;
+                            border-radius: 5px;
+                            // border-color: rgb(226, 226, 226);
+                            // border-width: 1px;
+                            // border-style:solid;
+                            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.55);
+                            color: $textMain;
+            
+                            &:hover{
+                                // background-color: rgb(233, 233, 233);
+                                border: none;
+                                cursor: pointer;
+                                transform: translateY(-1px);
+                            }
+                            &.active{
+                                background-color: $textAccent;
+                                border: none;
+                                font-weight: 800;
+                                color: white;
+                                // border-color: rgb(82, 102, 216);
+                            }
+                        }
                     }
+
                 }
             }  
         }
     }
+
+}
+@media (max-width:1200px){
+    .calculator {
+        .wrapper{
+            .container{
+                .calc{
+                    margin: 0 30%;
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
 }
 
-
+@media (max-width:900px){
+    .calculator { 
+        .wrapper{
+            .container{
+                .calc{
+                    margin: 0 20%;
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}
+@media (max-width:500px){
+    .calculator {
+        .wrapper{
+            .container{
+                .calc{
+                    margin: 0 10%;
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}

@@ -112,24 +112,24 @@ export default class Calculator extends Component {
 				<h2>{Title}</h2>
 				<div className='wrapper'>
 					<div className='f-row container'>
+						<img src='../../img/icons/floorplan.png' alt='floorplan'></img>
 						<div className='f-column calc'>
-							<div className='f-row calc-top'>
-								<div className='f-row calc-result'>
-									<h5>Примерная сумма иска</h5>
-									{getSum()}
+							<div className='f-row'>
+								<h4 className='calcText'>Площадь квартиры</h4>
+								<div className='calcBlock'>
+									{htmlAreaButtons}	
 								</div>
 							</div>
-							<div className='f-column calc-main'>
-								<div className='f-row calc-btns'>
-									<h5>Площадь квартиры</h5>
-									{htmlAreaButtons}
-								</div>
-								<div className='f-column calc-btns'>
-									<h5>Обнаруженные дефекты</h5>
-									{htmlCountButtons}
+							<div className='f-row'>
+								<h4 className='calcText'>Количество дефектов</h4>
+								<div className='calcBlock'>
+									{htmlCountButtons}	
 								</div>
 							</div>
-
+							<div className='f-row'>
+								<h4 className='calcText'>Примерная сумма иска:</h4>
+								{getSum()}
+							</div>
 						</div>
 					</div>
 				</div>	
