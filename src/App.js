@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import Header from './components/01_Header.js';
 import Cover from './components/02_Cover.js';
 import Why from './components/03_Why.js';
+import Defects from './components/03.1_Defects.js';
 import Cost from './components/04_Cost.js';
 import Calculator from './components/05_Calculator.js';
 import Process from './components/06_Process.js';
@@ -24,6 +25,7 @@ export default function App(){
 			<Header TextBlocks={TextBlockContent0} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<Cover ID='section-0' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
+			<Defects Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ000' ID='section-3.1'/>
 			<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
 			<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
 			<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
