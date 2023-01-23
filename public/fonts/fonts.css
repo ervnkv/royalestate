@@ -16,3 +16,20 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'LCDNova';
+    src: url('LCDNova.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: normal;
+}
+
+@font-face {
+    font-family: 'LCDNova';
+    src: local('a_LCDNova'),
+        url('a_LCDNova.woff2') format('woff2'),
+        url('a_LCDNova.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

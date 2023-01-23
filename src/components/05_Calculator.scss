@@ -3,17 +3,18 @@
 .calculator {
     margin: 30px 0; 
     align-items:center;
+    
     .wrapper{
         .container{
             justify-content:center;
             width: 100%;
             .calc{
+                // transform: rotate(15deg);
                 width: 100%;
-                background-color: grey;
-
                 margin: 0 30%;
                 margin-top: 50px;
                 border-radius: 20px;
+                box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.55);
                 h5{
                     color: $textSecond;
                     position: absolute;
@@ -23,19 +24,26 @@
                 }
     
                 .calc-top{
-                    // height: 80px;
                     border-radius: 20px 20px 0 0;
                     padding: 20px;
-                    background-color: rgb(43, 43, 43);
+                    background-color: #f2f5f8;
                     .calc-result{
                         position: relative;
                         width: 100%;
-                        background-color: rgb(214, 214, 214);
+                        background-color: #ffffff;
+                        border: 10px solid #f2f5f8;
+                        border-radius: 10px;
+                        box-shadow: inset 1px 1px 5px rgb(201, 201, 201),
+                                    5px 5px 10px rgb(211, 210, 210),
+                                    -5px -5px 10px rgb(255, 255, 255);
+                        
 
                         justify-content: center;
                         align-items: center;
 
-                        h3{
+                        h3{  
+                            // font-family: 'LCDNova', sans-serif;
+                            font-weight: 800;
                             margin: 30px auto 10px 10px;
                             color: $textAccent;
                             font-size: 30px;
@@ -46,7 +54,7 @@
                     border-radius: 0 0 20px 20px;
                     padding: 20px;
                     gap: 10px;
-                    background-color: rgb(71, 71, 71);
+                    background-color: #f2f5f8;
                     .calc-btns{
                         position: relative;
                         padding: 10px;
@@ -54,37 +62,42 @@
                         gap: 10px;
                         justify-content: center;
                         align-items: center;
-                        border: 1px solid rgb(43, 43, 43);
-                        background-color: rgba(43, 43, 43, 0.178);
+
                         h5{
-                            color: rgb(0, 0, 0);
-                            font-weight: 800;
+                            color: $textSecond;
+                            text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.829); 
+                            font-size: 16px;     
+                            font-weight: 400;
+                            
                         }
 
                         .btnRoomArea{
-                            background-color: rgb(214, 214, 214);
+                            background-color: #f2f5f8;
                             width: 100%;
                             height: 40px;
                             margin: 2px;
-                            border-radius: 5px;
-                            // border-color: rgb(226, 226, 226);
-                            // border-width: 1px;
-                            // border-style:solid;
-                            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.55);
+                            border-radius: 10px;
+                            
+                            box-shadow: 3px 3px 5px rgb(211, 210, 210),
+                                        -3px -3px 5px rgb(255, 255, 255),
+                                        inset 3px 3px 5px rgb(211, 210, 210,0),
+                                        inset -3px -3px 5px rgb(255, 255, 255, 0);
                             color: $textMain;
-            
+                            transition: box-shadow .2s;
                             &:hover{
-                                // background-color: rgb(233, 233, 233);
-                                border: none;
-                                cursor: pointer;
-                                transform: translateY(-1px);
+                                transform: none;
+                                box-shadow: 3px 3px 5px rgb(211, 210, 210,0),
+                                            -3px -3px 5px rgb(255, 255, 255,0), 
+                                            inset 3px 3px 5px rgb(211, 210, 210),
+                                            inset -3px -3px 5px rgb(255, 255, 255);                          
                             }
                             &.active{
+                                transform: none;
                                 background-color: $textAccent;
-                                border: none;
+                                box-shadow: 3px 3px 5px rgb(114, 132, 160),
+                                            -3px -3px 5px rgb(220, 230, 255);
                                 font-weight: 800;
                                 color: white;
-                                // border-color: rgb(82, 102, 216);
                             }
                         }
                     }

@@ -53,56 +53,56 @@ export default class Calculator extends Component {
 			let result = '';
 			switch (comb) {
 				case 'a1c1':
-					result = '100001';
+					result = '100 001';
 					break;
 				case 'a1c2':
-					result = '100002';
+					result = '100 002';
 					break;
 				case 'a1c3':
-					result = '100003';
+					result = '100 003';
 					break;
 				case 'a1c4':
-					result = '100004';
+					result = '100 004';
 					break;
 				case 'a1c5':
-					result = '100005';
+					result = '100 005';
 					break;
 				case 'a2c1':
-					result = '200001';
+					result = '200 001';
 					break;
 				case 'a2c2':
-					result = '200002';
+					result = '200 002';
 					break;
 				case 'a2c3':
-					result = '200003';
+					result = '200 003';
 					break;
 				case 'a2c4':
-					result = '200004';
+					result = '200 004';
 					break;
 				case 'a2c5':
-					result = '200005';
+					result = '200 005';
 					break;
 				case 'a3c1':
-					result = '300001';
+					result = '300 001';
 					break;
 				case 'a3c2':
-					result = '300002';
+					result = '300 002';
 					break;
 				case 'a3c3':
-					result = '300003';
+					result = '300 003';
 					break;
 				case 'a3c4':
-					result = '300004';
+					result = '300 004';
 					break;
 				case 'a3c5':
-					result = '300005';
+					result = '300 005';
 					break;
 				default:
-					result = '100000';
+					result = '100 000';
 					break;
 			}
 			return(
-				<h3>{result} p</h3>
+				<h3>{result} pуб.</h3>
 			);
 		};
 		
