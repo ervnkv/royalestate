@@ -17,13 +17,23 @@
     font-display: swap;
 }
 @font-face {
+    font-family: 'Gothic A1';
+    src: local('Gothic A1 Black'), local('GothicA1-Black'),
+        url('GothicA1-Black.woff2') format('woff2'),
+        url('GothicA1-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
     font-family: 'LCDNova';
     src: url('LCDNova.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: normal;
 }
-
 @font-face {
     font-family: 'LCDNova';
     src: local('a_LCDNova'),

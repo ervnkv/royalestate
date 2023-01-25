@@ -24,10 +24,10 @@ export default function App(){
 		<>
 			<Header TextBlocks={TextBlockContent0} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			<Cover ID='section-0' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			<Why TextBlocks={TextBlockContent1} Title='ЗАЧЕМ' ID='section-1'/>
-			<Defects Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ000' ID='section-3.1'/>
-			<Calculator Title='СКОЛЬКО Я ПОЛУЧУ' ID='section-3'/>
-			<Cost TextBlocks={TextBlockContent2} Title='СКОЛЬКО Я ПОТРАЧУ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
+			<Why TextBlocks={TextBlockContent1} Title='' ID='section-1'/>
+			<Defects TextBlocks={ContentDefects} Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ' ID='section-88'/>
+			<Calculator Title='ИСКОВОЙ КАЛЬКУЛЯТОР' ID='section-3'/>
+			<Cost TextBlocks={TextBlockContent2} Title='ПАКЕТЫ УСЛУГ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
 			<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
 			<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
 			<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
@@ -53,6 +53,11 @@ const TextBlockContent0 = [
 		id: 41,
 	},
 	{
+		head: 'Дефекты',
+		link: 'section-88', 
+		id: 42,
+	},
+	{
 		head: 'Выгода',
 		link: 'section-3', 
 		id: 43,
@@ -60,22 +65,22 @@ const TextBlockContent0 = [
 	{
 		head: 'Затраты',
 		link: 'section-2', 
-		id: 42,
+		id: 44,
 	},
 	{
 		head: 'Процесс',
 		link: 'section-4', 
-		id: 44,
+		id: 45,
 	},
 	{
 		head: 'Вопросы',
 		link: 'section-5', 
-		id: 45,
+		id: 46,
 	},
 	{
 		head: 'Связаться',
 		link: 'section-6', 
-		id: 46,
+		id: 47,
 	},
 ];
 // Наполнение сайта - Блок 1 
@@ -100,6 +105,28 @@ const TextBlockContent1= [
 		img: '../../img/icons/timemoney.svg',
 		imgAlt: 'timemoney',
 		id: 3,
+	},
+];
+
+// Наполнение сайта - Блок ДЕФЕКТЫ 
+const ContentDefects= [
+	{
+		head: 'Входные двери', 
+		content:'Неисправные замки, заедающая ручка, люфт входной двери, несоответствие проема дверной коробе',
+		img: '../../img/defects/1.jpg',
+		imgAlt: '',
+		pointTop: 20,
+		pointRight: 20,
+		id: 1,
+	},
+	{
+		head: 'Окна', 
+		content:'Неисправные замки, заедающая ручка, люфт входной двери, несоответствие проема дверной коробе',
+		img: '../../img/defects/2.jpg',
+		imgAlt: '',
+		pointTop: 50,
+		pointRight: 50,
+		id: 2,
 	},
 ];
 // Наполнение сайта - Блок ПАКЕТЫ УСЛУГ
@@ -141,22 +168,22 @@ const TextBlockContent2= [
 // Наполнение сайта - Блок ПРОЦЕСС СОТРУДНИЧЕСТВА 
 const TextBlockContent3= [
 	{
-		head: 'Подписание договора', 
+		head: '1', 
 		content:'Подписываем с вами договор об оказании услуг (осмотр квартиры и/или исковое заявление)',
 		id: 21,
 	},
 	{
-		head: 'Осмотр квартиры',
+		head: '2',
 		content: 'Проведение осмотра и подготовка заключения о стоимости устранения дефектов, допущенных застройщиком.',
 		id: 22,
 	},
 	{
-		head: 'Подготовка документов',
+		head: '3',
 		content: 'Подготовка и подача искового заявления о взыскании компенсации за строительные недостатки, пени, штрафа, компенсации морального вреда, и убытков.',
 		id: 23,
 	},
 	{
-		head: 'Сопровождение в суде',
+		head: '4',
 		content: 'Подготовка и подача искового заявления о взыскании компенсации за строительные недостатки, пени, штрафа, компенсации морального вреда, и убытков.',
 		id: 24,
 	},

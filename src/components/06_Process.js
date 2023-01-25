@@ -5,9 +5,8 @@ import './06_Process.scss';
 export default function Process({TextBlocks,Title,ID}) {
 	const htmlTextBlock = TextBlocks.map(({head,content,id}) =>{
 		return(
-			<div key={id} className='f-row card'>
-				<div className='f-row headText'>
-					<div className='round'/>
+			<div key={id} className='f-column card'>
+				<div  className='f-row headText'>
 					<h4>{head}</h4>
 				</div>
 				<p>{content}</p>
@@ -19,7 +18,7 @@ export default function Process({TextBlocks,Title,ID}) {
 		<section id={ID} className='f-column process '>
 			<h2>{Title}</h2>
 			<div className='wrapper'>
-				<div className='f-column container '>
+				<div className='f-row container '>
 					{htmlTextBlock}	
 				</div>
 			</div>

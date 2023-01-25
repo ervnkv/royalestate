@@ -29,12 +29,9 @@ body{
 
 h1, h2, h3{
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 900;
     color: $textMain;
     text-align: center;   
-}
-h2{
-    border-bottom:4px $textAccent solid;
 }
 h4{
     font-size: 20px; 
@@ -111,6 +108,7 @@ button{
     h1, h2, h3{
         font-size: 20px;  
     }
+
     h4{
         font-size: 16px;
     }

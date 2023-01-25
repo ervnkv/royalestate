@@ -36,6 +36,8 @@
         background-size: 60%;
         background-repeat: no-repeat;
         background-position: center;
+        scale: 0.95;
+        transition: scale 0.3s;
         &.right{
             left: auto;
             right: 0;
@@ -43,6 +45,12 @@
         }
         &.active{
             display: block;
+        }
+        &:hover{
+            scale: 1;
+        }
+        &:active{
+            scale: 0.95;
         }
     }
 }
