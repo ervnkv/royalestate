@@ -22,8 +22,9 @@ export default function Call ({onClose, packageName}) {
 		return () => {
 			document.querySelector('body').classList.remove('scrollstop');
 			document.removeEventListener('keydown', handleEscapeKey);
+			clearTimeout(timerID);
 		};
-	});
+	},[]);
 
 	const sendMessage = (e) => {
 		e.preventDefault();
@@ -42,10 +43,7 @@ export default function Call ({onClose, packageName}) {
 	return(
 		<div 
 		className='overlay'
-		onClick={()=>{
-			clearTimeout(timerID);			
-			onClose();
-		}} 
+		onClick={()=>onClose()} 
 		onSubmit={sendMessage}
 		>
 			<form className="f-column overlay-content" onClick={(e) => e.stopPropagation()}>
@@ -63,7 +61,7 @@ function callOpen(packageName) {
 				<label>Ваше имя</label>
 				<input name='name' type='name' placeholder='Артем Александрович'/>
 				<label style={{marginTop: '20px'}}>Номер телефона</label>
-				<input name='tel' type='tel' pattern='tel' required placeholder='+7 000 000 00 00'/>
+				<input name='tel' type='tel' required placeholder='+7 000 000 00 00'/>
 			</div>
 			<div className='f-column send'>
 				<button type='submit'>
