@@ -1,12 +1,12 @@
 import React from 'react';
-import './04_Cost.scss';
+import './05_Cost.scss';
 
 import Carousel from './90_Carousel.js';
 
 
-export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
+export default function Cost({Content,Title,ID,openCall,setPackageName}) {
 
-	const htmlTextBlock = TextBlocks.map(({head,content,priceMain,priceSecond,best,id}) =>{
+	const htmlBlock = Content.map(({head,content,priceMain,priceSecond,best,id}) =>{
 		return(
 			<div 
 			key={id}
@@ -33,7 +33,7 @@ export default function Cost({TextBlocks,Title,ID,openCall,setPackageName}) {
 		<section id={ID} className='f-column cost'>
 			<h2>{Title}</h2>
 			<div className='wrapper'>
-				<Carousel htmlTextBlock={htmlTextBlock}/>
+				<Carousel htmlBlock={htmlBlock}/>
 			</div>
 		</section>
 	);

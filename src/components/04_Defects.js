@@ -1,12 +1,12 @@
 import React,{useState} from 'react';
-import './03.1_Defects.scss';
+import './04_Defects.scss';
 
-export default function Defects({TextBlocks, Title, ID}) {
+export default function Defects({Content, Title, ID}) {
 	
 	const [activeDefect, setActiveDefect] = useState(0);
 	// const [activePhoto, setActivePhoto] = useState(0);
 
-	const htmlInfo = TextBlocks.map(({head,content,img,imgAlt,id}) =>{
+	const htmlBlockInfo = Content.map(({head,content,img,imgAlt,id}) =>{
 		return(
 			<div key={id} className='f-column info'>
 				<h3>{head}</h3>
@@ -16,7 +16,7 @@ export default function Defects({TextBlocks, Title, ID}) {
 		);
 	});
 
-	const htmlPoints = TextBlocks.map(({pointTop,pointRight,id},i) =>{
+	const htmlBlockPoints = Content.map(({pointTop,pointRight,id},i) =>{
 		return(
 			<div 
 			key={id} 
@@ -35,10 +35,10 @@ export default function Defects({TextBlocks, Title, ID}) {
 			<h2>{Title}</h2>
 			<div className='wrapper'>
 				<div className='f-row container'>
-					{htmlInfo[activeDefect]}
+					{htmlBlockInfo[activeDefect]}
 					<div className='map'>
 						<img src='../../img/apartment.png' alt='{imgAlt}'></img>
-						{htmlPoints}
+						{htmlBlockPoints}
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,7 @@ import './90_Carousel.scss';
 // 		.scroll-btn left
 
 
-export default function Carousel({htmlTextBlock}) {
+export default function Carousel({htmlBlock}) {
 	const containerRef = useRef(null);
 
 	const [scrollStart, setScrollStart] = useState(false);
@@ -82,7 +82,7 @@ export default function Carousel({htmlTextBlock}) {
 	
 	return(
 		<div id='carousel-container' ref={containerRef} className='f-row container'>
-			{htmlTextBlock}
+			{htmlBlock}
 			<button id='carousel-btn' onClick={movePrev} className={btnLeft ? 'scroll-btn left active' : 'scroll-btn left'}/>
 			<button id='carousel-btn' onClick={moveNext} className={btnRight ? 'scroll-btn right active' : 'scroll-btn right'}/>
 		</div>

@@ -1,9 +1,9 @@
 import React from 'react';
-import './08_Contacts.scss';
+import './09_Contacts.scss';
 
 
-export default function Contacts({Socials,Title,ID,openCall,setPackageName}) {
-	const htmlTextBlock = Socials.map(({link,img,imgAlt,id}) =>{
+export default function Contacts({Content,Title,ID,openCall,setPackageName}) {
+	const htmlBlock = Content.map(({link,img,imgAlt,id}) =>{
 		return(
 			<div key={id} className='social'>
 				<a href={link}> 
@@ -25,7 +25,7 @@ export default function Contacts({Socials,Title,ID,openCall,setPackageName}) {
 						<h5>Оставить заявку</h5>
 					</button>
 					<div className='f-row social-container'>
-						{htmlTextBlock}
+						{htmlBlock}
 					</div>
 					<a href='tel:+78124253342'>+7 (812) 425-33-42</a>
 				</div>

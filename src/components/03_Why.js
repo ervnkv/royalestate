@@ -3,8 +3,8 @@ import './03_Why.scss';
 
 import Carousel from './90_Carousel.js';
 
-export default function Why({TextBlocks,Title,ID}) {
-	const htmlTextBlock = TextBlocks.map(({head,content,img,imgAlt,id}) =>{
+export default function Why({Content,Title,ID}) {
+	const htmlBlock = Content.map(({head,content,img,imgAlt,id}) =>{
 		return(
 			<div key={id} className='f-column t-center card'>
 				<img src={img} alt={imgAlt}></img>
@@ -19,7 +19,7 @@ export default function Why({TextBlocks,Title,ID}) {
 		<section id={ID} className='f-column why'>
 			<h2>{Title}</h2>
 			<div className='wrapper'>
-				<Carousel htmlTextBlock={htmlTextBlock}/>
+				<Carousel htmlBlock={htmlBlock}/>
 			</div>
 		</section>
 	);

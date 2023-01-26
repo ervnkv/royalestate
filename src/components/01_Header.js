@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './01_Header.scss';
 
-export default function Header({TextBlocks,openCall,setPackageName}) {
+export default function Header({Content,openCall,setPackageName}) {
 	const [OpenMenu, onOpenMenu] = useState(false);
 
 	const scrollTo = (elementId) => {
@@ -11,7 +11,7 @@ export default function Header({TextBlocks,openCall,setPackageName}) {
 	};
 
 
-	let htmlTextBlock = TextBlocks.map(({head,link,id}) =>{
+	let htmlBlock = Content.map(({head,link,id}) =>{
 		return(
 			<li 
 			className='menu'
@@ -49,7 +49,7 @@ export default function Header({TextBlocks,openCall,setPackageName}) {
 				onMouseLeave={()=>onOpenMenu(!OpenMenu)}
 				>
 					<div className='f-column menu-list'>
-						{htmlTextBlock}
+						{htmlBlock}
 					</div>
 				</div>
 

@@ -60,8 +60,10 @@ function callOpen(packageName) {
 		<>
 			<h3>Оставьте свои контактные данные<br></br>и мы с вами свяжемся</h3>
 			<div className='f-column form'>
-				<label>Номер телефона</label>
-				<input type='tel' name='tel' placeholder='+7 000 000 00 00' autoFocus/>
+				<label>Ваше имя</label>
+				<input name='name' type='name' placeholder='Артем Александрович'/>
+				<label style={{marginTop: '20px'}}>Номер телефона</label>
+				<input name='tel' type='tel' pattern='tel' required placeholder='+7 000 000 00 00'/>
 			</div>
 			<div className='f-column send'>
 				<button type='submit'>

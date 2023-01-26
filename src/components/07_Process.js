@@ -1,9 +1,9 @@
 import React from 'react';
-import './06_Process.scss';
+import './07_Process.scss';
 
 
-export default function Process({TextBlocks,Title,ID}) {
-	const htmlTextBlock = TextBlocks.map(({head,content,id}) =>{
+export default function Process({Content,Title,ID}) {
+	const htmlBlock = Content.map(({head,content,id}) =>{
 		return(
 			<div key={id} className='f-column card'>
 				<div  className='f-row headText'>
@@ -19,7 +19,7 @@ export default function Process({TextBlocks,Title,ID}) {
 			<h2>{Title}</h2>
 			<div className='wrapper'>
 				<div className='f-row container '>
-					{htmlTextBlock}	
+					{htmlBlock}	
 				</div>
 			</div>
 		</section>

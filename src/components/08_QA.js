@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import './07_QA.scss';
+import './08_QA.scss';
 
 
-export default function QA({TextBlocks,Title,ID}) {
+export default function QA({Content,Title,ID}) {
 	
-	const htmlTextBlock = TextBlocks.map(({head,content,id}) => {
+	const htmlBlock = Content.map(({head,content,id}) => {
 		const [isActive, setActive] = useState(false);
 		return(
 			<div className='card' key={id}>
@@ -26,7 +26,7 @@ export default function QA({TextBlocks,Title,ID}) {
 			<h2>{Title}</h2>
 			<div className='wrapper'>
 				<div className='f-column container'>
-					{htmlTextBlock}
+					{htmlBlock}
 				</div>
 			</div>
 		</section>

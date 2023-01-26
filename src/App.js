@@ -3,14 +3,14 @@ import React,{useState} from 'react';
 import Header from './components/01_Header.js';
 import Cover from './components/02_Cover.js';
 import Why from './components/03_Why.js';
-import Defects from './components/03.1_Defects.js';
-import Cost from './components/04_Cost.js';
-import Calculator from './components/05_Calculator.js';
-import Process from './components/06_Process.js';
-import QA from './components/07_QA.js';
-import Contacts from './components/08_Contacts.js';
-import Footer from './components/09_Footer.js';
-import CallBtn from './components/10_CallBtn.js';
+import Defects from './components/04_Defects.js';
+import Cost from './components/05_Cost.js';
+import Calculator from './components/06_Calculator.js';
+import Process from './components/07_Process.js';
+import QA from './components/08_QA.js';
+import Contacts from './components/09_Contacts.js';
+import Footer from './components/10_Footer.js';
+import CallBtn from './components/11_CallBtn.js';
 import Call from './components/20_Call.js';
 
 
@@ -22,15 +22,15 @@ export default function App(){
 
 	return (
 		<>
-			<Header TextBlocks={TextBlockContent0} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			<Cover ID='section-0' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			<Why TextBlocks={TextBlockContent1} Title='' ID='section-1'/>
-			<Defects TextBlocks={ContentDefects} Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ' ID='section-88'/>
+			<Header Content={ContentMenu} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
+			<Cover openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')} ID='section-0'/>
+			<Why Content={ContentWhy} Title='' ID='section-1'/>
+			<Defects Content={ContentDefects} Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ' ID='section-2'/>
 			<Calculator Title='ИСКОВОЙ КАЛЬКУЛЯТОР' ID='section-3'/>
-			<Cost TextBlocks={TextBlockContent2} Title='ПАКЕТЫ УСЛУГ' ID='section-2' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
-			<Process TextBlocks={TextBlockContent3} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-4'/>
-			<QA TextBlocks={TextBlockContent4} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-5'/>
-			<Contacts Socials={Socials} Title='СВЯЖИТЕСЬ С НАМИ' ID='section-6' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
+			<Cost Content={ContentCost} Title='ПАКЕТЫ УСЛУГ' ID='section-4' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
+			<Process Content={ContentProsecc} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-5'/>
+			<QA Content={ContentQA} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-6'/>
+			<Contacts Content={ContentSocials} Title='СВЯЖИТЕСЬ С НАМИ' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')} ID='section-7'/>
 			<Footer/>
 			<CallBtn openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
 			{isCallOpen?  <Call onClose={() => setCallOpen(false)} packageName={packageName}/> : null}					
@@ -41,7 +41,7 @@ export default function App(){
 
 
 // Наполнение сайта - Блок МЕНЮ
-const TextBlockContent0 = [
+const ContentMenu = [
 	{
 		head: 'Начало',
 		link: 'section-0', 
@@ -54,37 +54,37 @@ const TextBlockContent0 = [
 	},
 	{
 		head: 'Дефекты',
-		link: 'section-88', 
+		link: 'section-2', 
 		id: 42,
 	},
 	{
-		head: 'Выгода',
+		head: 'Калькулятор',
 		link: 'section-3', 
 		id: 43,
 	},
 	{
-		head: 'Затраты',
-		link: 'section-2', 
+		head: 'Пакеты услуг',
+		link: 'section-4', 
 		id: 44,
 	},
 	{
 		head: 'Процесс',
-		link: 'section-4', 
+		link: 'section-5', 
 		id: 45,
 	},
 	{
 		head: 'Вопросы',
-		link: 'section-5', 
+		link: 'section-6', 
 		id: 46,
 	},
 	{
 		head: 'Связаться',
-		link: 'section-6', 
+		link: 'section-7', 
 		id: 47,
 	},
 ];
 // Наполнение сайта - Блок 1 
-const TextBlockContent1= [
+const ContentWhy= [
 	{
 		head: 'Дефекты есть почти во всех квартирах', 
 		content:'9 из 10 квартир сдаются застройщиками со строительными дефектами. Отклонения от норм СНИПов и ГОСТов, сколы, царапины, трещины, кривые стены, плитка, вздутый ламинат, продувания оконных рам, проблемы с вентиляцией и др.',
@@ -130,7 +130,7 @@ const ContentDefects= [
 	},
 ];
 // Наполнение сайта - Блок ПАКЕТЫ УСЛУГ
-const TextBlockContent2= [
+const ContentCost= [
 	{
 		head: 'Пакет услуг - 1. Лучший выбор', 
 		content:'Специалисты осмотрят Вашу квартиру, составят список дефектов. В результате Вы получите смету на ремонтные работы.',
@@ -166,7 +166,7 @@ const TextBlockContent2= [
 ];
 
 // Наполнение сайта - Блок ПРОЦЕСС СОТРУДНИЧЕСТВА 
-const TextBlockContent3= [
+const ContentProsecc= [
 	{
 		head: '1', 
 		content:'Подписываем с вами договор об оказании услуг (осмотр квартиры и/или исковое заявление)',
@@ -190,7 +190,7 @@ const TextBlockContent3= [
 ];
 
 // Наполнение сайта - Блок ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
-const TextBlockContent4= [
+const ContentQA= [
 	{
 		head: 'Почему так?', 
 		content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sunt odit dolorum magni itaque deserunt blanditiis suscipit quas nam, perferendis, saepe quos corrupti, praesentium deleniti? Exercitationem delectus atque similique fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sunt odit dolorum magni itaque deserunt blanditiis suscipit quas nam, perferendis, saepe quos corrupti, praesentium deleniti? Exercitationem delectus atque similique fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sunt odit dolorum magni itaque deserunt blanditiis suscipit quas nam, perferendis, saepe quos corrupti, praesentium deleniti? Exercitationem delectus atque similique fugit!',
@@ -209,7 +209,7 @@ const TextBlockContent4= [
 ];
 
 // Наполнение сайта - Блок СВЯЗАТЬСЯ С НАМИ
-const Socials= [
+const ContentSocials= [
 	{
 		link: 'https://www.instagram.com/direct/t/340282366841710300949128189009682422351',
 		img: '../../img/social/instagram.svg',
