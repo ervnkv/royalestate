@@ -22,18 +22,24 @@ export default function App(){
 
 	return (
 		<>
-			<Header Content={ContentMenu} openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			<Cover openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')} ID='section-0'/>
+			<Header Content={ContentMenu} openCall={() => setCallOpen(true)}/>
+			<Cover openCall={() => setCallOpen(true)} ID='section-0'/>
 			<Why Content={ContentWhy} Title='' ID='section-1'/>
 			<Defects Content={ContentDefects} Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ' ID='section-2'/>
 			<Calculator Title='ИСКОВОЙ КАЛЬКУЛЯТОР' ID='section-3'/>
 			<Cost Content={ContentCost} Title='ПАКЕТЫ УСЛУГ' ID='section-4' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
 			<Process Content={ContentProsecc} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-5'/>
 			<QA Content={ContentQA} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-6'/>
-			<Contacts Content={ContentSocials} Title='СВЯЖИТЕСЬ С НАМИ' openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')} ID='section-7'/>
+			<Contacts Content={ContentSocials} Title='СВЯЖИТЕСЬ С НАМИ' openCall={() => setCallOpen(true)} ID='section-7'/>
 			<Footer/>
-			<CallBtn openCall={() => setCallOpen(true)} setPackageName={()=>setPackage('')}/>
-			{isCallOpen?  <Call onClose={() => setCallOpen(false)} packageName={packageName}/> : null}					
+			<CallBtn openCall={() => setCallOpen(true)}/>
+			{isCallOpen?  <Call 
+							onClose={() => {
+								setCallOpen(false);
+								setPackage('');
+							}} 
+							packageName={packageName}
+							/> : null}					
 		</>
 	);
 }

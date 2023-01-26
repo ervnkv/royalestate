@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './01_Header.scss';
 
-export default function Header({Content,openCall,setPackageName}) {
+export default function Header({Content,openCall}) {
 	const [OpenMenu, onOpenMenu] = useState(false);
 
 	const scrollTo = (elementId) => {
@@ -34,10 +34,7 @@ export default function Header({Content,openCall,setPackageName}) {
 					<p>Юридическая компания</p>
 				</div> 
 
-				<div className='call-btn' onClick={()=>{
-					setPackageName();
-					openCall();
-					}}>
+				<div className='call-btn' onClick={()=>openCall()}>
 				</div>
 				
 				<div

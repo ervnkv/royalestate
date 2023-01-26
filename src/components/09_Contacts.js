@@ -2,7 +2,7 @@ import React from 'react';
 import './09_Contacts.scss';
 
 
-export default function Contacts({Content,Title,ID,openCall,setPackageName}) {
+export default function Contacts({Content,Title,ID,openCall}) {
 	const htmlBlock = Content.map(({link,img,imgAlt,id}) =>{
 		return(
 			<div key={id} className='social'>
@@ -18,10 +18,7 @@ export default function Contacts({Content,Title,ID,openCall,setPackageName}) {
 			<h2>{Title}</h2>
 			<div className='wrapper'>
 				<div className='f-row container'>
-					<button onClick={()=>{
-							setPackageName();
-							openCall();
-							}}>
+					<button onClick={()=>openCall()}>
 						<h5>Оставить заявку</h5>
 					</button>
 					<div className='f-row social-container'>
