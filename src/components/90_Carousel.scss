@@ -8,12 +8,17 @@
     overflow-x:auto;
     scroll-snap-type: x;
     scrollbar-width: none;
+
+    border: 1px solid red;
+
     &::-webkit-scrollbar {
         display: none;
     }
     .card{
         position: relative;
         min-width: calc((100%)/3 - 20px);
+
+        border: 1px solid green;
     }
     &.grab{
         cursor:grab;
