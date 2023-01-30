@@ -39,7 +39,7 @@
                 transform: rotateY(180deg);
                 h4{
                     color: white;
-                    font-size: 1vw;
+                    font-size: 24px;
                     font-weight: 800;
                 }
             }
@@ -69,6 +69,29 @@
                 margin: 5px 0;
                 .headText{
                     width: 30%;
+                    h4{
+                        font-size: 18px;
+                    }
+                }
+                p{
+                    margin-top: 35%;
+                }
+            }
+        }
+    }
+}
+@media (max-width:700px){
+    .process {
+        .container{
+            .card{
+                .headText{
+                    width: 50%;
+                    h4{
+                        font-size: 16px;
+                    }
+                }
+                p{
+                    margin-top: 60%;
                 }
             }
         }

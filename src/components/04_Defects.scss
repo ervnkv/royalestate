@@ -107,6 +107,14 @@
 }
 @media (max-width:1200px){
     .defects {
+        h2,h6{
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h6{
+            margin-top: 10px;
+        }
         .wrapper{
             .container{
                 flex-direction: column-reverse;
@@ -125,6 +133,10 @@
             .container{
                 .info, .map{
                     width: 65%;
+                    img:hover{
+                        scale: 1;
+                        border-radius: 0 0 20px 20px;
+                    }
                 }
             }
         }
