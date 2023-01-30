@@ -1,124 +1,122 @@
 import React, {useRef, useEffect, useState} from 'react';
 import './90_Carousel.scss';
 
-// Класс второго родителя - padding: 0 25px;
-// Класс первого родителя - position: relative;
-// .container
-// 		{TextBlocks}
-// 		.scroll-btn left
-// 		.scroll-btn left
-
-
 export default function Carousel({htmlBlock}) {
-	const containerRef = useRef(null);
+	const containerRef = useRef();
 
-	const [scrollWidth, setScrollWidth] = useState(1); // Полная ширина ref-контейнера
-	const [clientWidth, setClientWidth] = useState(1); // Видимая ширина ref-контейнера
-	const [scrollLeft, setScrollLeft] = useState(0); // Скролл слева ref-контейнера
+	const [scrollWidth, setScrollWidth] = useState(0); // Полная ширина ref-контейнера
+	const [clientWidth, setClientWidth] = useState(0); // Видимая ширина ref-контейнера
+	const [scrollLeft, setScrollLeft] = useState(0); // Скролл ref-контейнера
 
-	const [fullScreen, setFullScreen] = useState(null); // Элемент поместился на экран полностью?
+	const [needScroll, setNeedScroll] = useState(); // Элемент поместился на экран полностью?
 
-	const [btnLeft, setBtnLeft] = useState(false); // Показать кнопку Влево
-	const [btnRight, setBtnRight] = useState(false); // Показать кнопку Вправо
+	const [btnLeft, setBtnLeft] = useState(); // Показать кнопку Влево
+	const [btnRight, setBtnRight] = useState(); // Показать кнопку Вправо
+	
+	let prevX = 0;
 
-	const [scrollStart, setScrollStart] = useState(false);
-	const [prevX, setPrevX] = useState(0);
-
-	const [cursorGrab, setCursorGrab] = useState(false);
 
 	const startScroll = (e) => {
-		setScrollStart(true);
-		setPrevX(e.pageX);
-		cursorGrab ? containerRef.current.classList.add('grabbing') : null;
+		const refEl = containerRef.current;
+		prevX = (e.pageX);
+		refEl.classList.add('grabbing');
+		refEl.addEventListener('mousemove', scrolling);
+		// console.log('START SCROLL');
 	};
 	const scrolling = (e) => {
-		if(!scrollStart) return;
+		const refEl = containerRef.current;
 		const deltaX = (prevX - e.pageX);
-		const currentLeft = containerRef.current.scrollLeft += deltaX ;
-		containerRef.current.scrollTo({ left: currentLeft, top: 0, behavior: 'smooth' });
-		setPrevX(e.pageX);
-		checkButtons(currentLeft);	
-		if (cursorGrab) {
-			e.preventDefault();
-		}
+		const currentLeft = refEl.scrollLeft += deltaX*1.5 ;
+		setScrollLeft(currentLeft);
+		refEl.scrollTo({left: currentLeft, behavior: 'smooth'});
+		prevX = (e.pageX);
+		// checkButtons(currentLeft);
+		// console.log(currentLeft ,'scrolling');
 	};
 	const stopScroll = () => {
-		setScrollStart(false);
-		containerRef.current.classList.remove('grabbing');
+		const refEl = containerRef.current;
+		refEl.removeEventListener('mousemove', scrolling);
+		refEl.classList.remove('grabbing');
+		// console.log('STOP SCROLL');
 	};
 
 
 	// Показать кнопки Влево и Вправо
 	const checkButtons = (scrollLeft) => {
-		if (fullScreen) {
+		if (needScroll) {
+			scrollLeft > 10 ? setBtnLeft(true) : setBtnLeft(false);
+			scrollWidth < clientWidth + scrollLeft + 10 ? setBtnRight(false): setBtnRight(true);
+		} else {
 			setBtnLeft(false);
 			setBtnRight(false);
-		} else {
-			scrollLeft > 0 ? setBtnLeft(true) : setBtnLeft(false);
-			scrollWidth == clientWidth + scrollLeft ? setBtnRight(false): setBtnRight(true);
 		}
-
 	};
 
-	const checkCursor = () => {
-		setCursorGrab(!(containerRef.current.scrollWidth == containerRef.current.clientWidth));
-		cursorGrab ? containerRef.current.classList.add('grab') : containerRef.current.classList.remove('grab');
-	};
-	const movePrev = () => {
-		const futureScrollLeft = scrollLeft-clientWidth;
-		containerRef.current.scrollTo({ left: futureScrollLeft, behavior: 'smooth' });
+	const moveBtn = (dir) => {
+		const refEl = containerRef.current;
+		let futureScrollLeft = 0;
+		if (dir=='left') {
+			futureScrollLeft = refEl.scrollLeft-clientWidth;
+		} else {
+			futureScrollLeft = refEl.scrollLeft+clientWidth;
+		}
+		refEl.scrollTo({left: futureScrollLeft, behavior: 'smooth' });
+		// setScrollLeft(futureScrollLeft);
 		checkButtons(futureScrollLeft);
 	};
-	const moveNext = () => {
-		const futureScrollLeft = scrollLeft+clientWidth;
-		containerRef.current.scrollTo({ left: futureScrollLeft, behavior: 'smooth' });
-		checkButtons(futureScrollLeft);
-	};
-
-
 
 
 	// Срабатывает один раз при появлении компонента
 	useEffect(() => {
 		// html элемент
 		const refEl = containerRef.current;
-		// записываем стейты размеров, скролла и фуллскрина, считать эти значение можно только при следующем рендеринге
-		checkCursor();
+		// console.log('компонент загрузился', refEl);
+		// записываем стейты размеров и скролла
 		setScrollWidth(refEl.scrollWidth); 
 		setClientWidth(refEl.clientWidth);
 		setScrollLeft(refEl.scrollLeft);
-		refEl.scrollWidth == refEl.clientWidth ? setFullScreen(true) : setFullScreen(false);
-	},[]); 
+		if (refEl.scrollWidth == refEl.clientWidth) { // контейнер полностью поместился на экран
+			setNeedScroll(false);
+		} else { // контейнеру нужен скролл
+			setNeedScroll(true);
+			refEl.classList.add('grab');
+		}
+	},[]);
 
-
-
-	// Срабатывает каждый раз при обновлении fullScreen
+	// Срабатывает каждый раз при обновлении needScroll
 	useEffect(()=>{
 		// html элемент
 		const refEl = containerRef.current;
-		// стейт фуллскрина обновился, передаем это значение для отображения кнопок
-		checkButtons();
-
-		if (fullScreen) {
+		checkButtons(refEl.scrollLeft);
+		if (needScroll) {
+			// console.log('добавил лисенеры', refEl);
 			refEl.addEventListener('mousedown', startScroll);
-			refEl.addEventListener('mousemove', scrolling);
 			refEl.addEventListener('mouseup', stopScroll);
 			refEl.addEventListener('mouseleave', stopScroll);
 		}
 		return () => {
+			// console.log('убрал лисенеры', refEl);
 			refEl.removeEventListener('mousedown', startScroll);
-			refEl.removeEventListener('mousemove', scrolling);
 			refEl.removeEventListener('mouseup', stopScroll);
 			refEl.removeEventListener('mouseleave', stopScroll);
 		};
+	},[needScroll]);
 
-	},[fullScreen]);
+	// Срабатывает каждый раз при обновлении scrollLeft
+	useEffect(()=>{
+		// html элемент
+		const refEl = containerRef.current;
+		checkButtons(refEl.scrollLeft);
+		refEl.addEventListener('touchstart', () => checkButtons(refEl.scrollLeft));
+		refEl.addEventListener('touchmove', () => checkButtons(refEl.scrollLeft));
+		refEl.addEventListener('touchend', () => checkButtons(refEl.scrollLeft));
+	},[scrollLeft]);
 	
 	return(
 		<div id='carousel-container' ref={containerRef} className='f-row container'>
 			{htmlBlock}
-			<button id='carousel-btn' onClick={movePrev} className={btnLeft ? 'scroll-btn left active' : 'scroll-btn left'}/>
-			<button id='carousel-btn' onClick={moveNext} className={btnRight ? 'scroll-btn right active' : 'scroll-btn right'}/>
+			<button id='carousel-btn' onClick={()=>moveBtn('left')} className={btnLeft ? 'scroll-btn left active' : 'scroll-btn left'}/>
+			<button id='carousel-btn' onClick={()=>moveBtn('right')} className={btnRight ? 'scroll-btn right active' : 'scroll-btn right'}/>
 		</div>
 	);
 
