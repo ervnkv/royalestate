@@ -33,6 +33,7 @@ export default function Defects({Content, Title, ID}) {
 	return(
 		<section id={ID} className='defects'>
 			<h2>{Title}</h2>
+			<h6>Без профессионального оборудования, знаний и опыта найти большинство дефектов, а также попытаться взыскать расходы на устранение дефектов  будет проблематично</h6>
 			<div className='wrapper'>
 				<div className='f-row container'>
 					{htmlBlockInfo[activeDefect]}

@@ -32,7 +32,9 @@
                 }
                 &.active{
                     background-color: #f0f0f0;
+                    // background-color: $textAccent;
                     border-radius: 8px 8px 0 0;
+
                     
                 }
                 h5:last-child{
