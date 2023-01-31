@@ -18,10 +18,10 @@
             gap: 10px;
             padding: 10px;
             .info{
-                -o-animation: info-show .5s;
-                -moz-animation: info-show .5s;
-                -webkit-animation: info-show .5s;
-                animation: info-show .5s;
+                -o-animation: info-show .5s ease;
+                -moz-animation: info-show .5s ease;
+                -webkit-animation: info-show .5s ease;
+                animation: info-show .5s ease;
                 @keyframes info-show {
                   0% {
                     -o-transform:translateX(-200%);
@@ -29,6 +29,12 @@
                     -webkit-transform:translateX(-200%);
                     transform:translateX(-200%);
                     }
+                // 50% {
+                //     -o-transform:translateX(-100%);
+                //     -moz-transform:translateX(-100%);
+                //     -webkit-transform:translateX(-100%);
+                //     transform:translateX(-100%);
+                //     }
                   100% {
                     -o-transform:translateX(0);
                     -moz-transform:translateX(0);
