@@ -6,7 +6,6 @@ export default function Carousel({htmlBlock}) {
 
 	const [scrollWidth, setScrollWidth] = useState(0); // Полная ширина ref-контейнера
 	const [clientWidth, setClientWidth] = useState(0); // Видимая ширина ref-контейнера
-	const [scrollLeft, setScrollLeft] = useState(0); // Скролл ref-контейнера
 
 	const [needScroll, setNeedScroll] = useState(); // Элемент поместился на экран полностью?
 
@@ -27,10 +26,9 @@ export default function Carousel({htmlBlock}) {
 		const refEl = containerRef.current;
 		const deltaX = (prevX - e.pageX);
 		const currentLeft = refEl.scrollLeft += deltaX*1.5 ;
-		setScrollLeft(currentLeft);
 		refEl.scrollTo({left: currentLeft, behavior: 'smooth'});
 		prevX = (e.pageX);
-		// checkButtons(currentLeft);
+		checkButtons(currentLeft);
 		// console.log(currentLeft ,'scrolling');
 	};
 	const stopScroll = () => {
@@ -55,14 +53,15 @@ export default function Carousel({htmlBlock}) {
 	const moveBtn = (dir) => {
 		const refEl = containerRef.current;
 		let futureScrollLeft = 0;
+		const widthIN = scrollWidth-window.getComputedStyle(refEl).paddingRight.replace('px','');
 		if (dir=='left') {
-			futureScrollLeft = refEl.scrollLeft-clientWidth;
+			futureScrollLeft = refEl.scrollLeft-widthIN/(refEl.childElementCount-2);
 		} else {
-			futureScrollLeft = refEl.scrollLeft+clientWidth;
+			futureScrollLeft = refEl.scrollLeft+widthIN/(refEl.childElementCount-2);
 		}
 		refEl.scrollTo({left: futureScrollLeft, behavior: 'smooth' });
-		// setScrollLeft(futureScrollLeft);
 		checkButtons(futureScrollLeft);
+		// console.log(scrollWidth,scrollWidth-window.getComputedStyle(refEl).paddingRight.replace('px',''));
 	};
 
 
@@ -74,7 +73,6 @@ export default function Carousel({htmlBlock}) {
 		// записываем стейты размеров и скролла
 		setScrollWidth(refEl.scrollWidth); 
 		setClientWidth(refEl.clientWidth);
-		setScrollLeft(refEl.scrollLeft);
 		if (refEl.scrollWidth == refEl.clientWidth) { // контейнер полностью поместился на экран
 			setNeedScroll(false);
 		} else { // контейнеру нужен скролл
@@ -93,24 +91,21 @@ export default function Carousel({htmlBlock}) {
 			refEl.addEventListener('mousedown', startScroll);
 			refEl.addEventListener('mouseup', stopScroll);
 			refEl.addEventListener('mouseleave', stopScroll);
+			refEl.addEventListener('touchstart', () => checkButtons(refEl.scrollLeft));
+			refEl.addEventListener('touchmove', () => checkButtons(refEl.scrollLeft));
+			refEl.addEventListener('touchend', () => checkButtons(refEl.scrollLeft));
 		}
+
 		return () => {
 			// console.log('убрал лисенеры', refEl);
 			refEl.removeEventListener('mousedown', startScroll);
 			refEl.removeEventListener('mouseup', stopScroll);
 			refEl.removeEventListener('mouseleave', stopScroll);
+			refEl.removeEventListener('touchstart', []);
+			refEl.removeEventListener('touchmove', []);
+			refEl.removeEventListener('touchend', []);
 		};
 	},[needScroll]);
-
-	// Срабатывает каждый раз при обновлении scrollLeft
-	useEffect(()=>{
-		// html элемент
-		const refEl = containerRef.current;
-		checkButtons(refEl.scrollLeft);
-		refEl.addEventListener('touchstart', () => checkButtons(refEl.scrollLeft));
-		refEl.addEventListener('touchmove', () => checkButtons(refEl.scrollLeft));
-		refEl.addEventListener('touchend', () => checkButtons(refEl.scrollLeft));
-	},[scrollLeft]);
 	
 	return(
 		<div id='carousel-container' ref={containerRef} className='f-row container'>

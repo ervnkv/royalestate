@@ -120,10 +120,14 @@
         .container{
             .content{
                 .text{ 
+                    width: 100%;
                     h2,h3,mark{
                         max-width: 85%;
                         font-size: 40px;
                         line-height: 80px;
+                    }
+                    button{
+                        width: 300px;
                     }
                 }
             }
