@@ -6,9 +6,8 @@
     align-items:center; 
     justify-content: center;
     background-color: $textAccent;
-    // height: fit-content;
 
-    background-image: url("../../public/img/test.jpg");
+    background-image: url("../../public/img/cover-img.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,10 +16,6 @@
     user-select: none;
     
     .container{
-        // background-image: url("../../public/img/cover-bg.svg");
-        // background-size: cover;
-        // background-position: cent er;
-        // background-repeat: no-repeat;
         height: 100%;
         .content{
             width: 100%;

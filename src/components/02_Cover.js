@@ -13,7 +13,6 @@ export default function Cover({ID,openCall}) {
 								<h5>Свяжитесь с нами</h5>
 							</button>
 						</div>
-						<img src="../../img/cover-img.png" alt="cover-img"></img>
 					</div>
 					
 				</div>	

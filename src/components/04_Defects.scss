@@ -29,12 +29,6 @@
                     -webkit-transform:translateX(-200%);
                     transform:translateX(-200%);
                     }
-                // 50% {
-                //     -o-transform:translateX(-100%);
-                //     -moz-transform:translateX(-100%);
-                //     -webkit-transform:translateX(-100%);
-                //     transform:translateX(-100%);
-                //     }
                   100% {
                     -o-transform:translateX(0);
                     -moz-transform:translateX(0);
@@ -62,7 +56,7 @@
                     object-fit: cover;
                     overflow: hidden;
                     border-radius: 0 0 20px 20px;
-
+                    user-select: none;
                     transition: all 0.5s;
                     &:hover{
                         z-index: 2;
@@ -78,6 +72,7 @@
                 height:100%;
                 img{
                     width: 100%;
+                    user-select: none;
                 }                
                 .point{
                     position: absolute;
