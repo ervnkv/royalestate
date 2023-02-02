@@ -27,7 +27,7 @@ export default function Header({Content,openCall}) {
 	return(
 		<header className='header'>
 			<div className='f-row wrapper'>
-				<img width={80} height={80} src="/img/logo.svg" alt="Logo" />
+				<img width={80} height={80} src="/img/logo.svg" alt="ГРИФ - Юридическая компания. Логотип" />
 
 				<div className='header_logo_text'>
 					<h1>ГРИФ</h1>

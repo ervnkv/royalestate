@@ -26,7 +26,7 @@ export default function App(){
 			<Cover openCall={() => setCallOpen(true)} ID='section-0'/>
 			<Why Content={ContentWhy} Title='' ID='section-1'/>
 			<Defects Content={ContentDefects} Title='РАСПРОСТРАНЕННЫЕ ДЕФЕКТЫ' ID='section-2'/>
-			{isCallOpen === 'ХУЙ' ? <Calculator Title='ИСКОВОЙ КАЛЬКУЛЯТОР' ID='section-3'/> : null}
+			{isCallOpen === '0' ? <Calculator Title='ИСКОВОЙ КАЛЬКУЛЯТОР' ID='section-3'/> : null}
 			<Cost Content={ContentCost} Title='ПАКЕТЫ УСЛУГ' ID='section-4' openCall={() => setCallOpen(true)} setPackageName={(value)=>setPackage(value)} />
 			<Process Content={ContentProsecc} Title='ПРОЦЕСС СОТРУДНИЧЕСТВА' ID='section-5'/>
 			<QA Content={ContentQA} Title='ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ' ID='section-6'/>
@@ -95,21 +95,21 @@ const ContentWhy= [
 		head: 'Дефекты есть почти во всех квартирах', 
 		content:'9 из 10 квартир сдаются застройщиками со строительными дефектами. Отклонения от норм СНИПов и ГОСТов, сколы, царапины, трещины, кривые стены, плитка, вздутый ламинат, продувания оконных рам, проблемы с вентиляцией и др.',
 		img: '../../img/icons/diagram.svg',
-		imgAlt: 'diagram',
+		imgAlt: 'Иконка - лампочка',
 		id: 1,
 	},
 	{
 		head: 'Застройщик не инициирует решение проблем за Вас',
 		content: 'Застройщики практически никогда не устраняют недостатки, исключение составляют те дефекты, которые препятствуют проживанию в квартире. Соответственно покупателям приходится проводить дополнительные строительные работы и ремонт самостоятельно за свой счет',
 		img: '../../img/icons/gesturing.svg',
-		imgAlt: 'gesturing',
+		imgAlt: 'Иконка - человек в строительной каске',
 		id: 2,
 	},
 	{
 		head: 'Риски самостоятельной приёмки квартиры',
 		content: 'Высокая вероятность получить квартиру с недочётами ремонта, которые могут повлиять на качество вашей жизни или перспектива существенных финансовых потерь от дополнительных ремонтных работ в будущем',
 		img: '../../img/icons/timemoney.svg',
-		imgAlt: 'timemoney',
+		imgAlt: 'Иконка - лупа',
 		id: 3,
 	},
 ];
@@ -296,25 +296,25 @@ const ContentSocials= [
 	{
 		link: 'https://www.instagram.com/direct/t/340282366841710300949128189009682422351',
 		img: '../../img/social/instagram.svg',
-		imgAlt: 'instagram',
+		imgAlt: 'Иконка - Инстаграм',
 		id: 31,
 	},
 	{
 		link: 'https://vk.com/id76299038',
 		img: '../../img/social/vk.svg',
-		imgAlt: 'vk',
+		imgAlt: 'Иконка - Вконтакте',
 		id: 32,
 	},
 	{
 		link: 'https://t.me/Tarasov444',
 		img: '../../img/social/telegram.svg',
-		imgAlt: 'telegram',
+		imgAlt: 'Иконка - Телеграм',
 		id: 33,
 	},
 	{
 		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 		img: '../../img/social/email.svg',
-		imgAlt: 'email',
+		imgAlt: 'Иконка - Электронная почта',
 		id: 34,
 	},
 ];

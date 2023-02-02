@@ -38,7 +38,7 @@ export default function Defects({Content, Title, ID}) {
 				<div className='f-row container'>
 					{htmlBlockInfo[activeDefect]}
 					<div className='map'>
-						<img src='../../img/apartment.png' alt='{imgAlt}'></img>
+						<img src='../../img/apartment.png' alt='План квартиры с дефектами'></img>
 						{htmlBlockPoints}
 					</div>
 				</div>
