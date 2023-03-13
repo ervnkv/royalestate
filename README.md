@@ -1,11 +1,12 @@
 # Лендинг юридической компании
+# https://royalestate-rust.vercel.app/
 
 
-# МАКЕТ FIGMA
+# Макет figma
 https://www.figma.com/file/yH510WfkRWIpuykVqoTPTF/ЮАС
 
 
-# НАПОМИНАНИЕ ПО GIT и NPM
+# Напоминание по git и npm
 ### Скопировать проект из гитхаба
 git clone https://github.com/ervnkv/royalestate.git
 ### Установить необходимые модули из зависимостей
