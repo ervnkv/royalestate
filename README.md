@@ -2,10 +2,6 @@
 # https://royalestate-rust.vercel.app/
 
 
-# Макет figma
-https://www.figma.com/file/yH510WfkRWIpuykVqoTPTF/ЮАС
-
-
 # Напоминание по git и npm
 ### Скопировать проект из гитхаба
 git clone https://github.com/ervnkv/royalestate.git
